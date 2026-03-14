@@ -1,70 +1,55 @@
-# Deriv Trading Bot (Accumulator Strategy)
+# Deriv Trading Bot
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Python](https://img.shields.io/badge/Python-3.9+-blue)
-![API](https://img.shields.io/badge/API-Deriv-orange)
-![Trading](https://img.shields.io/badge/Platform-GAT_Ready-brightgreen)
+![Platform](https://img.shields.io/badge/Platform-Deriv-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-## About
-A robust, Python-based automated trading bot built for the Deriv platform. Designed specifically to execute accumulator strategies and SMA crossovers, this system provides a highly modular architecture for running backtests against historical data and deploying algorithmic trading logic natively.
-
-## Visuals
-*(Insert a GIF of your terminal running a successful backtest or a chart of the SMA crossover execution here)*
+## The Elevator Pitch
+A modular, Python-based automated trading bot built for the Deriv platform. It features an SMA crossover strategy and is designed to test and execute accumulator trades. The project includes a robust backtesting engine that allows you to validate trading theories against historical CSV pricing data before deploying algorithmic logic.
 
 ## Features
-* **Modular Strategy Engine:** A plug-and-play architecture (`src/strategy.py`) specifically configured for SMA crossover logic and easily adaptable for complex accumulator strategies.
-* **Robust Backtester:** Built-in backtesting suite (`src/backtester.py`) that loads historical CSV pricing data to validate trading theories before risking real capital.
-* **Deriv API Integration:** Seamless connection to the Deriv platform for fetching market data and executing trades.
-* **Data Handling:** Effortless CSV ingestion for offline strategy development and algorithmic optimization.
+* **Modular Strategy Engine:** A plug-and-play architecture (`src/strategy.py`) specifically configured for SMA crossover logic and easily adaptable for custom accumulator strategies.
+* **Robust Backtester:** Built-in backtesting suite (`src/backtester.py`) that loads historical data to simulate trades and evaluate algorithm performance.
+* **Deriv API Connector:** Includes a placeholder connector structure (`src/connector.py`) intended for seamless connection to the Deriv platform for live market data and execution.
+* **Data Handling:** Effortless CSV ingestion for offline strategy development and optimization.
 
 ## Prerequisites
-Before running the bot, ensure you have the following setup:
+Before running the project, ensure you have the following installed:
 * **Python** (v3.9 or higher)
 * **pip** (Python package installer)
-* A **Deriv API Token** (Available from your Deriv developer dashboard)
-* Historical pricing data formatted as a CSV (e.g., `data/sample_prices.csv`)
+* A CSV file containing historical pricing data (e.g., `data/sample_prices.csv`)
 
 ## Installation
-Run the following commands to set up the trading bot on your local machine:
+Run the following commands to get your local development environment set up:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/justicethinker/deriv_trading_bot.git
+git clone [https://github.com/justicethinker/deriv_trading_bot.git](https://github.com/justicethinker/deriv_trading_bot.git)
 cd deriv_trading_bot
 
-# 2. Create and activate a virtual environment
+# 2. Create and activate a virtual environment (Recommended)
 python3 -m venv venv
 source venv/bin/activate  # On Windows use: venv\Scripts\activate
 
 # 3. Install the dependencies
 pip install -r requirements.txt
-
-# 4. Configure Environment Variables
-# Create a .env file and add your Deriv API Token
-cat <<EOT >> .env
-DERIV_API_TOKEN="your_deriv_token_here"
-ENVIRONMENT="development"
-EOT
 ```
 
 ## Usage
 
 ### Running a Backtest
-To validate your SMA crossover strategy against historical data, run the backtester module:
+To validate the SMA crossover strategy against your historical data, use the example runner:
 ```bash
 python run_backtest.py --csv data/sample_prices.csv
 ```
 
-### Extending Strategies
-New algorithms can be added to the `deriv_accumulator_bot` directory. Ensure your strategy class inherits from the base strategy interface and implements the required signal generation logic.
-
 ## Contributing
-We welcome contributions to help improve and expand the trading strategies!
+We welcome contributions to help improve the trading strategies and backtesting engine!
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/NewAccumulatorStrategy`)
-3. Commit your Changes (`git commit -m 'Add some NewAccumulatorStrategy'`)
-4. Push to the Branch (`git push origin feature/NewAccumulatorStrategy`)
+2. Create your Feature Branch (`git checkout -b feature/NewStrategy`)
+3. Commit your Changes (`git commit -m 'Add a NewStrategy'`)
+4. Push to the Branch (`git push origin feature/NewStrategy`)
 5. Open a Pull Request
 
 ## License
