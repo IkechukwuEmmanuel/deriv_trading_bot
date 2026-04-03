@@ -1,0 +1,59 @@
+# Deriv Trading Bot
+
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Python](https://img.shields.io/badge/Python-3.9+-blue)
+![Platform](https://img.shields.io/badge/Platform-Deriv-orange)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+## The Elevator Pitch
+A modular, Python-based automated trading bot built for the Deriv platform. It features an SMA crossover strategy and is designed to test and execute accumulator trades. The project includes a robust backtesting engine that allows you to validate trading theories against historical CSV pricing data before deploying algorithmic logic.
+
+## Features
+* **Modular Strategy Engine:** A plug-and-play architecture (`src/strategy.py`) specifically configured for SMA crossover logic and easily adaptable for custom accumulator strategies.
+* **Robust Backtester:** Built-in backtesting suite (`src/backtester.py`) that loads historical data to simulate trades and evaluate algorithm performance.
+* **Deriv API Connector:** Includes a placeholder connector structure (`src/connector.py`) intended for seamless connection to the Deriv platform for live market data and execution.
+* **Data Handling:** Effortless CSV ingestion for offline strategy development and optimization.
+
+## Prerequisites
+Before running the project, ensure you have the following installed:
+* **Python** (v3.9 or higher)
+* **pip** (Python package installer)
+* A CSV file containing historical pricing data (e.g., `data/sample_prices.csv`)
+
+## Installation
+Run the following commands to get your local development environment set up:
+
+```bash
+# 1. Clone the repository
+git clone [https://github.com/justicethinker/deriv_trading_bot.git](https://github.com/justicethinker/deriv_trading_bot.git)
+cd deriv_trading_bot
+
+# 2. Create and activate a virtual environment (Recommended)
+python3 -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+# 3. Install the dependencies
+pip install -r requirements.txt
+```
+
+## Usage
+
+### Running a Backtest
+To validate the SMA crossover strategy against your historical data, use the example runner:
+```bash
+python run_backtest.py --csv data/sample_prices.csv
+```
+
+## Contributing
+We welcome contributions to help improve the trading strategies and backtesting engine!
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/NewStrategy`)
+3. Commit your Changes (`git commit -m 'Add a NewStrategy'`)
+4. Push to the Branch (`git push origin feature/NewStrategy`)
+5. Open a Pull Request
+
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+**Contact:** justicethinker2@gmail.com | [GitHub](https://github.com/justicethinker)
