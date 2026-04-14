@@ -18,7 +18,7 @@ from logging.handlers import RotatingFileHandler
 
 from config import (
     DEFAULT_MARKET, DEFAULT_CONTRACT, DEFAULT_STAKE,
-    DAILY_TARGET, DAILY_STOPLOSS, ACCU_PROFIT_TARGET,
+    DAILY_TARGET, DAILY_STOPLOSS, #ACCU_PROFIT_TARGET,
     ACCU_GROWTH_RATE, DB_PATH
 )
 from database import Database
