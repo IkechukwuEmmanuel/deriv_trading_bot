@@ -1,12 +1,12 @@
 """
-main.py — Production Grade Orchestrator
-────────────────────────────────────────
+main.py — Production Grade Orchestrator (Accumulator Strict Edition)
+────────────────────────────────────────────────────────────────────
 Architecture Upgrades:
   1. App/Orchestrator Pattern: Separates lifecycle from business logic.
   2. TradeController: Encapsulates all trading rules and state.
-  3. asyncio.Lock: Thread-safe locking prevents race conditions and spam trades.
-  4. Graceful Shutdown: Hooks into system signals to safely close DB/WS.
-  5. Log Rotation: Prevents log files from consuming server storage.
+  3. Mutex Locking: asyncio.Lock prevents double-entry race conditions.
+  4. Live Barrier Evasion: Exit logic moved to on_trade_update to process live Z-scores.
+  5. Graceful Shutdown: Hooks into system signals to safely close DB/WS.
 """
 
 import asyncio
@@ -23,57 +23,48 @@ from config import (
 )
 from database import Database
 from deriv import DerivEngine
-from strategies import AccumulatorStrategy, get_best_signal
+from strategies import get_entry_signal, check_exit_condition
 from telegram_bot import TelegramController
 
 # ── 1. Professional Logging Setup ─────────────────────────────────────────
-# Uses a RotatingFileHandler: keeps max 5 backup files of 5MB each.
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     handlers=[
         logging.StreamHandler(sys.stdout),
-        RotatingFileHandler("bot.log", maxBytes=5*1024*1024, backupCount=5, encoding="utf-8")
+        RotatingFileHandler("bot.log", maxBytes=5*1024*1024,
+                            backupCount=5, encoding="utf-8")
     ]
 )
 log = logging.getLogger("main")
 
-STRATEGY_TO_CONTRACT = {
-    "ACCU":       "ACCU",
-    "CALL_PUT":   "CALL",
-    "DIGIT":      "DIGITMATCH",
-    "OVER_UNDER": "DIGITOVER",
-    "EVEN_ODD":   "DIGITEVEN",
-    "TICK_HL":    "TICKHIGH",
-    "MULT":       "MULTUP",
-}
 
 @dataclass
 class BotState:
-    market            : str   = DEFAULT_MARKET
-    contract_type     : str   = DEFAULT_CONTRACT
-    stake             : float = DEFAULT_STAKE
-    daily_target      : float = DAILY_TARGET
-    daily_stoploss    : float = DAILY_STOPLOSS
-    auto_mode         : bool  = True
-    trading           : bool  = False
-    paused            : bool  = False
-    open_contract_id  : int | None = None
-    open_trade_db_id  : int | None = None
-    open_pnl          : float = 0.0
-    open_entry_price  : float = 0.0
-    open_contract_type: str   = ""
-    engine            : DerivEngine | None = None
-    db                : Database | None    = None
-    telegram          : TelegramController | None = None
+    market: str = DEFAULT_MARKET
+    contract_type: str = "ACCU"  # Exclusively set to ACCU
+    stake: float = DEFAULT_STAKE
+    daily_target: float = DAILY_TARGET
+    daily_stoploss: float = DAILY_STOPLOSS
+    auto_mode: bool = True
+    trading: bool = False
+    paused: bool = False
+    open_contract_id: int | None = None
+    open_trade_db_id: int | None = None
+    open_pnl: float = 0.0
+    open_entry_price: float = 0.0
+    open_contract_type: str = ""
+    engine: DerivEngine | None = None
+    db: Database | None = None
+    telegram: TelegramController | None = None
 
 
 # ── 2. Trading Controller (Business Logic) ───────────────────────────────
 class TradeController:
     """Encapsulates all decision making and trade execution logic."""
+
     def __init__(self, state: BotState):
         self.state = state
-        self.accu_strategy = AccumulatorStrategy()
         # Async lock mathematically prevents double-entry race conditions
         self.trade_lock = asyncio.Lock()
 
@@ -97,27 +88,14 @@ class TradeController:
             await self._halt_trading("🛑 <b>Daily stop-loss hit!</b>", daily_pnl)
             return
 
-        # ── Spike Exit logic ──
-        if s.open_contract_id and s.open_contract_type == "ACCU":
-            if self.accu_strategy.should_exit(ticks):
-                log.info("Spike detected during open Accumulator — closing early.")
-                await self.close_trade(reason="SPIKE_EXIT")
-            return 
-
+        # If a contract is open, or trading is halted, skip signal generation
         if s.open_contract_id or not s.trading or s.paused:
-            return 
+            return
 
-        # ── Signal Generation ──
-        if s.auto_mode:
-            best_algo = await s.db.get_best_algorithm(min_trades=30)
-            strategy_key = best_algo if best_algo else "ACCU"
-        else:
-            reverse = {v: k for k, v in STRATEGY_TO_CONTRACT.items()}
-            strategy_key = reverse.get(s.contract_type, "ACCU")
+        # ── Signal Generation (Variance Arbitrage) ──
+        signal = get_entry_signal(ticks, growth_rate=ACCU_GROWTH_RATE)
 
-        signal = get_best_signal(ticks, preferred=strategy_key, growth_rate=ACCU_GROWTH_RATE)
-
-        if signal and signal.confidence >= 0.62:
+        if signal:
             # Safely acquire the lock before opening to prevent spamming
             if not self.trade_lock.locked():
                 async with self.trade_lock:
@@ -140,25 +118,9 @@ class TradeController:
         ct = signal.contract_type
         log.info("Opening trade: %s", signal)
 
-        # Build proposal kwargs
-        proposal_kwargs = {}
-        if ct == "ACCU":
-            proposal_kwargs = {"growth_rate": signal.params.get("growth_rate", ACCU_GROWTH_RATE)}
-        elif ct in ("DIGITMATCH", "DIGITDIFF"):
-            proposal_kwargs = {"duration": 1, "duration_unit": "t", "barrier": str(signal.params.get("digit", 0))}
-        elif ct in ("DIGITEVEN", "DIGITODD", "DIGITOVER", "DIGITUNDER"):
-            proposal_kwargs = {"duration": 1, "duration_unit": "t"}
-            if ct in ("DIGITOVER", "DIGITUNDER"):
-                proposal_kwargs["barrier"] = str(signal.params.get("barrier", 5))
-        elif ct in ("TICKHIGH", "TICKLOW"):
-            dur = signal.params.get("duration", 5)
-            proposal_kwargs = {"duration": dur, "duration_unit": "t", "selected_tick": signal.params.get("selected_tick", dur)}
-        elif ct in ("MULTUP", "MULTDOWN"):
-            proposal_kwargs = {"multiplier": signal.params.get("multiplier", 10)}
-            if lo := signal.params.get("limit_order"):
-                proposal_kwargs["limit_order"] = lo
-        else:
-            proposal_kwargs = {"duration": 5, "duration_unit": "t"}
+        # Build proposal kwargs exclusively for Accumulators
+        proposal_kwargs = {"growth_rate": signal.params.get(
+            "growth_rate", ACCU_GROWTH_RATE)}
 
         # Register intent to DB
         ticks = s.engine.get_ticks(s.market)
@@ -170,7 +132,7 @@ class TradeController:
             stake=s.stake,
             entry_price=ticks[-1] if ticks else 0,
         )
-        
+
         s.open_trade_db_id = db_id
         s.open_contract_type = ct
 
@@ -184,8 +146,8 @@ class TradeController:
             if s.telegram:
                 await s.telegram.push(
                     f"📥 <b>Trade opened</b>\n"
-                    f"Contract: <code>{ct}</code> | Stake: <code>${s.stake:.2f}</code>\n"
-                    f"Confidence: {signal.confidence*100:.0f}%"
+                    f"Type: <code>Accumulator</code> | Stake: <code>${s.stake:.2f}</code>\n"
+                    f"Trigger: {signal.reason}"
                 )
         except Exception as e:
             log.error("Trade open failed: %s", e)
@@ -194,11 +156,18 @@ class TradeController:
             s.open_contract_id = None
             s.open_contract_type = ""
             if s.telegram:
-                await s.telegram.push(f"⚠ Trade failed to open: {e}")
+                await s.telegram.push(f"⚠️ Trade failed to open: {e}")
 
     async def close_trade(self, reason: str = "MANUAL"):
         cid = self.state.open_contract_id
-        if not cid: return
+        if not cid:
+            return
+
+        # INSTANT STATE LOCK: Prevent network race conditions.
+        # We wipe the ID from state BEFORE awaiting the API call.
+        # This stops the next tick from triggering a duplicate sell.
+        self.state.open_contract_id = None
+
         log.info("Closing contract %s — reason: %s", cid, reason)
         try:
             await self.state.engine.sell_contract(cid, price=0)
@@ -211,17 +180,38 @@ class TradeController:
 
         if mtype == "proposal_open_contract":
             poc = msg.get("proposal_open_contract", {})
-            if not poc: return
+            if not poc:
+                return
 
             pnl = float(poc.get("profit", 0))
             s.open_pnl = pnl
 
-            # Target Exit
+            # 1. Standard Target Exit
             if s.open_contract_type == "ACCU" and pnl >= ACCU_PROFIT_TARGET and s.open_contract_id:
                 log.info("Target +$%.2f reached — selling.", pnl)
-                await self.close_trade(reason="TARGET")
+                await self.close_trade(reason="TARGET_MET")
                 return
 
+            # 2. Probability Evasion Exit (Zero-Latency Barrier Check)
+            if s.open_contract_type == "ACCU" and s.open_contract_id and not poc.get("is_sold"):
+                try:
+                    current_spot = float(poc["current_spot"])
+                    high_barrier = float(poc["high_barrier"])
+                    low_barrier = float(poc["low_barrier"])
+                except (KeyError, TypeError):
+                    pass  # Skip if payload doesn't have barriers yet
+                else:
+                    ticks = s.engine.get_ticks(s.market)
+                    should_evade = check_exit_condition(
+                        ticks, current_spot, high_barrier, low_barrier)
+
+                    if should_evade:
+                        log.warning(
+                            f"DANGER DETECTED: Variance Arbitrage triggered emergency exit!")
+                        await self.close_trade(reason="PROBABILITY_EVASION")
+                        return
+
+            # 3. Contract Resolution
             if poc.get("is_sold") or poc.get("status") == "sold":
                 result = "WIN" if pnl > 0 else "LOSS"
                 bal = float(poc.get("balance_after", s.engine.balance))
@@ -254,6 +244,7 @@ class TradeController:
 # ── 3. Main Application Orchestrator ──────────────────────────────────────
 class DerivBotApp:
     """Manages system lifecycle, DI (Dependency Injection), and graceful shutdown."""
+
     def __init__(self):
         self.db = Database(DB_PATH)
         self.state = BotState(db=self.db)
@@ -268,7 +259,6 @@ class DerivBotApp:
 
         # Load persisted settings
         self.state.market = await self.db.get_setting("market", DEFAULT_MARKET)
-        self.state.contract_type = await self.db.get_setting("contract_type", DEFAULT_CONTRACT)
         self.state.stake = await self.db.get_setting("stake", DEFAULT_STAKE)
         self.state.daily_target = await self.db.get_setting("daily_target", DAILY_TARGET)
         self.state.daily_stoploss = await self.db.get_setting("daily_stoploss", DAILY_STOPLOSS)
@@ -295,14 +285,15 @@ class DerivBotApp:
         connected = await self.engine.wait_connected(timeout=30)
         if self.tg and connected:
             await self.tg.push(
-                "🤖 <b>Deriv Bot Online (Pro v2)</b>\n"
+                "🤖 <b>Deriv Bot Online (Accumulator Strict)</b>\n"
                 f"Market: <code>{self.state.market}</code>\n"
                 f"Trading: {'ON ✅' if self.state.trading else 'OFF'}"
             )
 
     def trigger_shutdown(self, sig):
         """Catches system signals to flip the shutdown event gracefully."""
-        log.warning("Caught signal %s. Initiating graceful shutdown...", sig.name)
+        log.warning(
+            "Caught signal %s. Initiating graceful shutdown...", sig.name)
         self._shutdown_event.set()
 
     async def run(self):
@@ -314,7 +305,7 @@ class DerivBotApp:
             try:
                 loop.add_signal_handler(sig, self.trigger_shutdown, sig)
             except NotImplementedError:
-                pass # Windows fallback (relies on KeyboardInterrupt)
+                pass  # Windows fallback (relies on KeyboardInterrupt)
 
         # Launch background tasks
         tasks = [
@@ -325,38 +316,39 @@ class DerivBotApp:
             tasks.append(asyncio.create_task(self.tg.run()))
 
         log.info("Bot is active. Waiting for operations...")
-        
+
         # Keep application alive until shutdown is triggered
         await self._shutdown_event.wait()
-        
+
         await self.teardown(tasks)
 
     async def teardown(self, tasks):
         """Gracefully close all connections and cancel tasks."""
         log.info("Shutting down services...")
-        self.state.trading = False # Halt operations immediately
-        
+        self.state.trading = False  # Halt operations immediately
+
         if self.tg:
             await self.tg.push("🛑 Bot shutting down...")
             await self.tg.stop()
-            
+
         if self.engine:
             await self.engine.disconnect()
-            
+
         if self.db:
-            await self.db.close() # Assuming your DB has a close method
+            await self.db.close()
 
         for t in tasks:
             t.cancel()
-        
+
         await asyncio.gather(*tasks, return_exceptions=True)
         log.info("Shutdown complete.")
+
 
 if __name__ == "__main__":
     app = DerivBotApp()
     try:
         asyncio.run(app.run())
     except KeyboardInterrupt:
-        pass # Expected on Windows
+        pass  # Expected on Windows
     except Exception as e:
         log.critical("Application crashed: %s", e)

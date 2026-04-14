@@ -1,11 +1,11 @@
 """
-telegram_bot.py — Professional Interactive UI
-─────────────────────────────────────────────
+telegram_bot.py — Professional Interactive UI (Accumulator Strict Edition)
+──────────────────────────────────────────────────────────────────────────
 Architecture Upgrades:
-  1. Deep Interactive Menus: Buttons for settings, markets, and risk management.
-  2. "Awaiting Input" State: Allows users to tap a button and type a value, 
-     removing the need for slash commands.
-  3. AI Integration: The analytics button now triggers the Gemini report.
+  1. Strategic Alignment: Stripped all legacy contract types and "Auto Mode" toggles.
+  2. Anti-Spam Guard: Implemented _safe_edit to catch Telegram's "Message not modified" crashes.
+  3. UI Polish: Status dashboard now explicitly tracks Accumulator-specific metrics.
+  4. Global Error Boundary: Added a root-level error handler to prevent UI thread panics.
 """
 
 import asyncio
@@ -16,52 +16,65 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
     Application, CallbackQueryHandler, CommandHandler, MessageHandler, filters, ContextTypes,
 )
+from telegram.error import BadRequest
 from telegram.constants import ParseMode
 
 from config import (
-    TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, MARKETS, CONTRACT_TYPES,
+    TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, MARKETS
 )
 
 log = logging.getLogger("telegram")
 
+# ── Helpers ───────────────────────────────────────────────────────────────
+
 def _bar(value: float, total: float, width: int = 10) -> str:
-    pct  = max(0.0, min(1.0, value / total if total else 0))
+    pct = max(0.0, min(1.0, value / total if total else 0))
     done = int(pct * width)
     return "█" * done + "░" * (width - done)
 
+async def _safe_edit(query, text: str, reply_markup=None, parse_mode=ParseMode.HTML):
+    """Prevents fatal crashes when a user double-taps a button causing no text change."""
+    try:
+        await query.edit_message_text(text=text, reply_markup=reply_markup, parse_mode=parse_mode)
+    except BadRequest as e:
+        if "Message is not modified" in str(e):
+            pass # Ignore spam clicks
+        else:
+            log.error("Telegram edit error: %s", e)
+
 async def _build_status_text(s) -> str:
-    db  = s.db
+    db = s.db
     bal = s.engine.balance if s.engine else 0.0
     pnl = await db.get_today_pnl()
     cnt = await db.get_trade_count_today()
     summary = await db.get_lifetime_summary()
-    total   = summary.get("total_trades", 0)
-    wins    = summary.get("wins", 0)
-    wr      = f"{wins/total*100:.1f}%" if total else "—"
+    total = summary.get("total_trades", 0)
+    wins = summary.get("wins", 0)
+    wr = f"{wins/total*100:.1f}%" if total else "—"
 
     target_bar = _bar(max(pnl, 0), s.daily_target)
-    loss_bar   = _bar(max(-pnl, 0), abs(s.daily_stoploss))
+    loss_bar = _bar(max(-pnl, 0), abs(s.daily_stoploss))
     trade_status = (
         f"🔴 Open — ID {s.open_contract_id} | P&L {s.open_pnl:+.2f}"
         if s.open_contract_id else "— No open trade"
     )
+    
     mode = ("🟢 RUNNING" if s.trading and not s.paused
             else ("⏸ PAUSED" if s.paused else "🔴 STOPPED"))
-    auto = "AUTO" if s.auto_mode else s.contract_type
 
     return (
-        f"<b>📊 Deriv Bot Status</b>  {mode}\n"
+        f"<b>📊 Accumulator Variance Engine</b>  {mode}\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"<b>Balance</b>    ${bal:.2f} {s.engine.currency if s.engine else ''}\n"
-        f"<b>Today P&L</b>  {pnl:+.2f}\n"
-        f"<b>Target</b>     {target_bar} ${max(pnl,0):.2f} / ${s.daily_target:.2f}\n"
-        f"<b>Stop-loss</b>  {loss_bar} ${max(-pnl,0):.2f} / ${abs(s.daily_stoploss):.2f}\n"
+        f"<b>Balance</b>   ${bal:.2f} {s.currency if s.engine else ''}\n"
+        f"<b>Today P&L</b> {pnl:+.2f}\n"
+        f"<b>Target</b>    {target_bar} ${max(pnl,0):.2f} / ${s.daily_target:.2f}\n"
+        f"<b>Stop-loss</b> {loss_bar} ${max(-pnl,0):.2f} / ${abs(s.daily_stoploss):.2f}\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"<b>Market</b>     <code>{s.market}</code>\n"
-        f"<b>Contract</b>   <code>{auto}</code>\n"
-        f"<b>Stake</b>      ${s.stake:.2f}\n"
-        f"<b>Today trades</b> {cnt} | Win rate: {wr}\n"
-        f"<b>Trade</b>      {trade_status}\n"
+        f"<b>Market</b>    <code>{s.market}</code>\n"
+        f"<b>Strategy</b>  <code>Variance Arbitrage</code>\n"
+        f"<b>Stake</b>     ${s.stake:.2f}\n"
+        f"<b>Today's Trades</b> {cnt} | Win Rate: {wr}\n"
+        f"<b>Live Trade</b>     {trade_status}\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
         f"<i>{datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC</i>"
     )
@@ -82,11 +95,9 @@ def _main_keyboard() -> InlineKeyboardMarkup:
     ])
 
 def _settings_keyboard(s) -> InlineKeyboardMarkup:
-    """The settings submenu."""
+    """The settings submenu (Stripped of obsolete contract toggles)."""
     return InlineKeyboardMarkup([
         [InlineKeyboardButton(f"Market: {s.market}", callback_data="menu_market")],
-        [InlineKeyboardButton(f"Contract: {s.contract_type}", callback_data="menu_contract"),
-         InlineKeyboardButton(f"Auto: {'ON' if s.auto_mode else 'OFF'}", callback_data="op_toggle_auto")],
         [InlineKeyboardButton(f"Stake: ${s.stake:.2f}", callback_data="input_stake")],
         [InlineKeyboardButton(f"Target: ${s.daily_target:.2f}", callback_data="input_target"),
          InlineKeyboardButton(f"Stop: -${abs(s.daily_stoploss):.2f}", callback_data="input_stoploss")],
@@ -102,10 +113,12 @@ def _list_keyboard(items: dict, prefix: str) -> InlineKeyboardMarkup:
         if len(row) == 2:
             keyboard.append(row)
             row = []
-    if row: keyboard.append(row)
+    if row:
+        keyboard.append(row)
     keyboard.append([InlineKeyboardButton("🔙 Back to Settings", callback_data="menu_settings")])
     return InlineKeyboardMarkup(keyboard)
 
+# ── Controller Class ───────────────────────────────────────────────────────
 
 class TelegramController:
     def __init__(self, bot_state):
@@ -113,15 +126,15 @@ class TelegramController:
             raise ValueError("TELEGRAM_TOKEN is not set. Get one from @BotFather.")
         self.state = bot_state
         self.app = Application.builder().token(TELEGRAM_TOKEN).build()
-        self._awaiting_input = None  # Tracks what setting the user is currently typing
+        self._awaiting_input = None  
         self._register_handlers()
 
     def _register_handlers(self):
         # Basic Commands
         self.app.add_handler(CommandHandler("start", self.cmd_menu))
         self.app.add_handler(CommandHandler("menu", self.cmd_menu))
-        
-        # Text input handler (catches users typing stakes/targets after clicking a button)
+
+        # Text input handler (catches users typing stakes/targets)
         self.app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, self._handle_text_input))
 
         # Button handlers separated by prefix
@@ -129,9 +142,13 @@ class TelegramController:
         self.app.add_handler(CallbackQueryHandler(self.handle_op, pattern="^op_"))
         self.app.add_handler(CallbackQueryHandler(self.handle_input_request, pattern="^input_"))
         self.app.add_handler(CallbackQueryHandler(self.handle_set_market, pattern="^setmkt_"))
-        self.app.add_handler(CallbackQueryHandler(self.handle_set_contract, pattern="^setct_"))
+        
+        # Global Error Boundary
+        self.app.add_error_handler(self._error_handler)
 
-    # ── Auth guard ────────────────────────────────────────────────────────
+    async def _error_handler(self, update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
+        """Log the error and prevent the bot UI from crashing."""
+        log.error("Exception while handling Telegram update:", exc_info=context.error)
 
     def _is_authorised(self, chat_id: int) -> bool:
         return chat_id == TELEGRAM_CHAT_ID
@@ -146,24 +163,19 @@ class TelegramController:
         except Exception as e:
             log.error("Push failed: %s", e)
 
-    # ── Main Entry ────────────────────────────────────────────────────────
-    
+    # ── Handlers ──────────────────────────────────────────────────────────
+
     async def cmd_menu(self, update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         if not self._is_authorised(update.effective_chat.id): return
         self._awaiting_input = None
         await update.message.reply_text(
-            "🤖 <b>Deriv Bot Control Panel</b>\nChoose an action:",
+            "🤖 <b>Variance Arbitrage Control Panel</b>\nChoose an action:",
             reply_markup=_main_keyboard(),
             parse_mode=ParseMode.HTML,
         )
 
-    # ── Text Input Handler (No more slash commands) ───────────────────────
-    
     async def _handle_text_input(self, update: Update, ctx: ContextTypes.DEFAULT_TYPE):
-        if not self._is_authorised(update.effective_chat.id): return
-        
-        if not self._awaiting_input:
-            # User typed randomly, ignore or remind them to use menu
+        if not self._is_authorised(update.effective_chat.id) or not self._awaiting_input:
             return
 
         text = update.message.text.strip()
@@ -181,12 +193,12 @@ class TelegramController:
             s.stake = val
             await s.db.set_setting("stake", val)
             await update.message.reply_text(f"✅ Stake set to ${val:.2f}", reply_markup=_settings_keyboard(s))
-            
+
         elif self._awaiting_input == "target":
             s.daily_target = abs(val)
             await s.db.set_setting("daily_target", s.daily_target)
             await update.message.reply_text(f"✅ Daily target set to +${s.daily_target:.2f}", reply_markup=_settings_keyboard(s))
-            
+
         elif self._awaiting_input == "stoploss":
             s.daily_stoploss = -abs(val)
             await s.db.set_setting("daily_stoploss", s.daily_stoploss)
@@ -194,8 +206,6 @@ class TelegramController:
 
         self._awaiting_input = None
 
-    # ── Menu Navigation Handlers ──────────────────────────────────────────
-    
     async def handle_menu_nav(self, update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         query = update.callback_query
         if not self._is_authorised(query.message.chat.id): return
@@ -203,22 +213,14 @@ class TelegramController:
         self._awaiting_input = None
 
         action = query.data.replace("menu_", "")
-        
-        if action == "main":
-            await query.edit_message_text("🤖 <b>Deriv Bot Control Panel</b>", 
-                                          reply_markup=_main_keyboard(), parse_mode=ParseMode.HTML)
-        elif action == "settings":
-            await query.edit_message_text("⚙️ <b>Bot Settings</b>\nTap a value to change it:", 
-                                          reply_markup=_settings_keyboard(self.state), parse_mode=ParseMode.HTML)
-        elif action == "market":
-            await query.edit_message_text("📈 <b>Select Market</b>:", 
-                                          reply_markup=_list_keyboard(MARKETS, "setmkt"), parse_mode=ParseMode.HTML)
-        elif action == "contract":
-            await query.edit_message_text("📜 <b>Select Contract Type</b>:", 
-                                          reply_markup=_list_keyboard(CONTRACT_TYPES, "setct"), parse_mode=ParseMode.HTML)
 
-    # ── Input Requesters ──────────────────────────────────────────────────
-    
+        if action == "main":
+            await _safe_edit(query, "🤖 <b>Variance Arbitrage Control Panel</b>", reply_markup=_main_keyboard())
+        elif action == "settings":
+            await _safe_edit(query, "⚙️ <b>Bot Settings</b>\nTap a value to change it:", reply_markup=_settings_keyboard(self.state))
+        elif action == "market":
+            await _safe_edit(query, "📈 <b>Select Market</b>:", reply_markup=_list_keyboard(MARKETS, "setmkt"))
+
     async def handle_input_request(self, update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         query = update.callback_query
         if not self._is_authorised(query.message.chat.id): return
@@ -226,7 +228,7 @@ class TelegramController:
 
         target = query.data.replace("input_", "")
         self._awaiting_input = target
-        
+
         prompts = {
             "stake": "Send a message with the new Stake amount (e.g. 1.5):",
             "target": "Send a message with the new Daily Target (e.g. 5):",
@@ -234,45 +236,28 @@ class TelegramController:
         }
         await query.message.reply_text(f"⌨️ {prompts[target]}")
 
-    # ── Setters (Lists) ───────────────────────────────────────────────────
-
     async def handle_set_market(self, update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         query = update.callback_query
         if not self._is_authorised(query.message.chat.id): return
         await query.answer()
-        
+
         sym = query.data.replace("setmkt_", "")
         old = self.state.market
         self.state.market = sym
         await self.state.db.set_setting("market", sym)
-        
+
         if self.state.engine:
             await self.state.engine.unsubscribe_ticks(old)
             await self.state.engine.subscribe_ticks(sym)
-            
-        await query.edit_message_text(f"✅ Market changed to <code>{sym}</code>", 
-                                      reply_markup=_settings_keyboard(self.state), parse_mode=ParseMode.HTML)
 
-    async def handle_set_contract(self, update: Update, ctx: ContextTypes.DEFAULT_TYPE):
-        query = update.callback_query
-        if not self._is_authorised(query.message.chat.id): return
-        await query.answer()
-        
-        ct = query.data.replace("setct_", "")
-        self.state.contract_type = ct
-        self.state.auto_mode = False
-        await self.state.db.set_setting("contract_type", ct)
-        await query.edit_message_text(f"✅ Contract changed to <code>{ct}</code> (Auto-mode disabled)", 
-                                      reply_markup=_settings_keyboard(self.state), parse_mode=ParseMode.HTML)
-
-    # ── Operations ────────────────────────────────────────────────────────
+        await _safe_edit(query, f"✅ Market changed to <code>{sym}</code>", reply_markup=_settings_keyboard(self.state))
 
     async def handle_op(self, update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         query = update.callback_query
         if not self._is_authorised(query.message.chat.id): return
         await query.answer()
         self._awaiting_input = None
-        
+
         action = query.data.replace("op_", "")
         s = self.state
         reply = query.message.reply_text
@@ -284,17 +269,13 @@ class TelegramController:
                 s.trading = True
                 s.paused = False
                 await s.db.set_setting("trading", True)
-                await query.edit_message_text(
-                    f"▶ <b>Bot Started</b>\nMarket: <code>{s.market}</code>\nStake: <code>${s.stake:.2f}</code>",
-                    reply_markup=_main_keyboard(), parse_mode=ParseMode.HTML
-                )
+                await _safe_edit(query, f"▶ <b>Bot Started</b>\nMarket: <code>{s.market}</code>\nStake: <code>${s.stake:.2f}</code>", reply_markup=_main_keyboard())
 
         elif action == "stop":
             s.trading = False
             await s.db.set_setting("trading", False)
             note = "open trade will settle first" if s.open_contract_id else "no open trades"
-            await query.edit_message_text(f"⏹ <b>Bot Stopped</b> ({note})", 
-                                          reply_markup=_main_keyboard(), parse_mode=ParseMode.HTML)
+            await _safe_edit(query, f"⏹ <b>Bot Stopped</b> ({note})", reply_markup=_main_keyboard())
 
         elif action == "pause":
             s.paused = True
@@ -306,13 +287,7 @@ class TelegramController:
 
         elif action == "status":
             text = await _build_status_text(s)
-            # Update the existing message rather than spamming a new one
-            await query.edit_message_text(text, reply_markup=_main_keyboard(), parse_mode=ParseMode.HTML)
-
-        elif action == "toggle_auto":
-            s.auto_mode = not s.auto_mode
-            await query.edit_message_text("⚙️ <b>Bot Settings</b>", 
-                                          reply_markup=_settings_keyboard(s), parse_mode=ParseMode.HTML)
+            await _safe_edit(query, text, reply_markup=_main_keyboard())
 
         elif action == "export":
             path = await s.db.export_csv("trades_export.csv")
@@ -325,30 +300,27 @@ class TelegramController:
                         filename=f"deriv_trades_{datetime.utcnow().date()}.csv",
                         caption="📊 Trade history"
                     )
-        
+
         elif action == "analytics_ai":
-            # Direct hook into our newly created analytics.py
             import analytics
             await reply("🤖 Generating AI Analysis... Please wait.")
             try:
-                metrics = analytics.fetch_metrics(s.db._db) # Reusing existing sqlite connection
+                metrics = analytics.fetch_metrics(s.db._db)
                 report_path = "ai_report.md"
-                # Using to_thread because Gemini API is synchronous and blocks the loop
                 await asyncio.to_thread(analytics.analyze_with_gemini, metrics, report_path)
+                
                 with open(report_path, "r", encoding="utf-8") as f:
                     report_text = f.read()
-                
-                # Telegram has a 4096 char limit, so we send it as a document if it's too long
+
                 if len(report_text) > 4000:
                     with open(report_path, "rb") as f:
                         await query.message.reply_document(document=f, caption="🤖 Full AI Report")
                 else:
                     await reply(report_text, parse_mode=ParseMode.MARKDOWN)
-                    
+
             except Exception as e:
                 log.error("AI Analysis failed: %s", e)
-                await reply("❌ Failed to generate AI report. Make sure GEMINI_API_KEY is in .env")
-
+                await reply("❌ Failed to generate AI report. Check logs.")
 
     # ── Lifecycle ─────────────────────────────────────────────────────────
 

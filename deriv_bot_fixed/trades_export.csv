@@ -1,0 +1,559 @@
+id,ts,market,contract_type,algorithm,signal,stake,entry_price,exit_price,pnl,result,balance_after,contract_id,duration_ticks,notes
+558,2026-04-03T05:29:14.375028,1HZ10V,PUT,Strong Trend (ADX: 36.0),DOWN,1.0,9786.49,9786.57,0.94,WIN,10001.06,,,
+557,2026-04-03T05:29:06.380317,1HZ10V,PUT,Strong Trend (ADX: 29.4),DOWN,1.0,9786.87,9786.18,0.94,WIN,10000.12,,,
+556,2026-04-03T05:28:58.562099,1HZ10V,PUT,Strong Trend (ADX: 57.1),DOWN,1.0,9787.28,9786.71,0.94,WIN,9999.18,,,
+555,2026-04-03T05:28:51.744302,1HZ10V,PUT,Strong Trend (ADX: 55.8),DOWN,1.0,9787.41,9787.62,-1.0,LOSS,9998.24,,,
+554,2026-04-03T05:28:26.362164,1HZ10V,CALL,Strong Trend (ADX: 33.6),UP,1.0,9788.64,9788.5,-1.0,LOSS,9999.24,,,
+553,2026-04-03T05:28:19.304975,1HZ10V,CALL,Strong Trend (ADX: 36.8),UP,1.0,9788.12,9788.79,0.94,WIN,10000.24,,,
+552,2026-04-03T05:28:11.355662,1HZ10V,CALL,Strong Trend (ADX: 40.6),UP,1.0,9787.88,9788.3,0.94,WIN,9999.3,,,
+551,2026-04-03T05:16:05.389723,1HZ10V,PUT,Bearish Breakout | FDI: 1.25,DOWN,1.0,9776.4,9776.62,-1.0,LOSS,9998.36,,,
+550,2026-04-03T05:13:17.420262,1HZ10V,MULTUP,Overextended (Z=-2.62),UP,1.0,9779.53,9776.28,-0.15,LOSS,9999.36,,,
+549,2026-04-03T05:08:35.384068,1HZ10V,CALL,Bullish Breakout | FDI: 1.36,UP,1.0,9783.33,9782.62,-1.0,LOSS,9999.51,,,
+548,2026-04-03T05:00:46.501072,R_10,MULTUP,Overextended (Z=-2.48),UP,1.0,5083.943,,,CANCELLED,,,,"Multiplier is not in acceptable range. Accepts 400,1000,2000,3000,4000."
+547,2026-04-03T05:00:44.443773,R_10,MULTUP,Overextended (Z=-2.80),UP,1.0,5084.028,,,CANCELLED,,,,"Multiplier is not in acceptable range. Accepts 400,1000,2000,3000,4000."
+546,2026-04-03T05:00:42.512622,R_10,MULTUP,Overextended (Z=-2.90),UP,1.0,5084.196,,,CANCELLED,,,,"Multiplier is not in acceptable range. Accepts 400,1000,2000,3000,4000."
+545,2026-04-03T05:00:40.585995,R_10,MULTUP,Overextended (Z=-2.49),UP,1.0,5084.41,,,CANCELLED,,,,"Multiplier is not in acceptable range. Accepts 400,1000,2000,3000,4000."
+544,2026-04-03T05:00:38.512687,R_10,MULTUP,Overextended (Z=-2.63),UP,1.0,5084.462,,,CANCELLED,,,,"Multiplier is not in acceptable range. Accepts 400,1000,2000,3000,4000."
+543,2026-04-03T04:59:46.500086,R_10,MULTDOWN,Overextended (Z=2.26),DOWN,1.0,5085.418,,,,,,,
+542,2026-04-03T04:59:06.522227,R_10,MULTUP,Overextended (Z=-2.23),UP,1.0,5085.135,,,CANCELLED,,,,Request 15 (proposal) timed out
+541,2026-04-03T04:58:28.565466,R_10,MULTUP,Overextended (Z=-2.62),UP,1.0,5085.433,,,CANCELLED,,,,Request 14 (proposal) timed out
+540,2026-04-03T04:57:43.740762,R_10,MULTDOWN,Overextended (Z=2.29),DOWN,1.0,5085.2,,,CANCELLED,,,,Request 13 (proposal) timed out
+539,2026-04-03T04:57:18.678741,R_10,MULTDOWN,Overextended (Z=2.22),DOWN,1.0,5085.06,,,CANCELLED,,,,Request 12 (proposal) timed out
+538,2026-04-03T04:56:53.600310,R_10,MULTDOWN,Overextended (Z=2.38),DOWN,1.0,5084.854,,,CANCELLED,,,,Request 11 (proposal) timed out
+537,2026-04-03T04:56:28.524633,R_10,MULTDOWN,Overextended (Z=2.55),DOWN,1.0,5084.801,,,CANCELLED,,,,Request 9 (proposal) timed out
+536,2026-04-03T04:54:50.340414,R_10,MULTUP,Overextended (Z=-2.46),UP,1.0,5083.362,,,,,,,
+535,2026-04-03T04:54:04.450742,R_10,MULTUP,Overextended (Z=-2.21),UP,1.0,5083.572,,,,,,,
+534,2026-04-03T04:52:26.550350,R_10,MULTDOWN,Overextended (Z=2.91),DOWN,1.0,5085.075,,,,,,,
+533,2026-04-03T04:50:26.401679,R_10,MULTDOWN,Overextended (Z=2.24),DOWN,1.0,5085.31,,,,,,,
+532,2026-04-03T04:49:34.389241,R_10,MULTUP,Overextended (Z=-2.36),UP,1.0,5084.426,,,,,,,
+531,2026-04-03T03:49:23.391922,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.68,,,,,,,
+530,2026-04-03T03:49:23.365897,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.45,,,,,,,
+529,2026-04-03T03:49:23.340034,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.83,,,,,,,
+528,2026-04-03T03:49:23.320778,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9786.0,,,,,,,
+527,2026-04-03T03:49:23.289719,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9784.96,,,,,,,
+526,2026-04-03T03:49:23.231841,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9787.23,,,,,,,
+525,2026-04-03T03:49:23.205766,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.62700,None,1.0,9785.38,,,,,,,
+524,2026-04-03T03:49:23.168003,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.53,,,,,,,
+523,2026-04-03T03:49:23.137098,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.02,,,,,,,
+522,2026-04-03T03:49:23.102783,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.4,,,,,,,
+521,2026-04-03T03:49:03.279129,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.29,,,CANCELLED,,,,Request 100 timed out
+520,2026-04-03T03:49:03.267836,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.54,,,CANCELLED,,,,Request 99 timed out
+519,2026-04-03T03:49:03.259378,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 4.0% (expected 10%),4,1.0,9785.62,,,CANCELLED,,,,Request 98 timed out
+518,2026-04-03T03:49:03.240496,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 4.0% (expected 10%),4,1.0,9786.06,,,CANCELLED,,,,Request 97 timed out
+517,2026-04-03T03:49:03.214132,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 4.0% (expected 10%),4,1.0,9785.4,,,CANCELLED,,,,Request 96 timed out
+516,2026-04-03T03:49:03.180570,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 4.0% (expected 10%),4,1.0,9787.45,,,CANCELLED,,,,Request 95 timed out
+515,2026-04-03T03:49:03.122496,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.62400,None,1.0,9785.43,,,CANCELLED,,,,Request 94 timed out
+514,2026-04-03T03:49:03.108384,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 4.0% (expected 10%),4,1.0,9785.01,,,CANCELLED,,,,Request 93 timed out
+513,2026-04-03T03:49:03.057163,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 4.0% (expected 10%),4,1.0,9784.96,,,CANCELLED,,,,Request 92 timed out
+512,2026-04-03T03:49:03.037433,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.3,,,CANCELLED,,,,Request 91 timed out
+511,2026-04-03T03:48:58.268987,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.25,,,CANCELLED,,,,WebSocket is not connected
+510,2026-04-03T03:48:58.255753,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.62,,,CANCELLED,,,,WebSocket is not connected
+509,2026-04-03T03:48:58.237430,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.52,,,CANCELLED,,,,WebSocket is not connected
+508,2026-04-03T03:48:58.209415,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.59,,,CANCELLED,,,,WebSocket is not connected
+507,2026-04-03T03:48:58.175564,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.35,,,CANCELLED,,,,WebSocket is not connected
+506,2026-04-03T03:48:58.151565,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9787.46,,,CANCELLED,,,,WebSocket is not connected
+505,2026-04-03T03:48:58.109902,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.68250,None,1.0,9785.32,,,CANCELLED,,,,WebSocket is not connected
+504,2026-04-03T03:48:58.094259,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.03,,,CANCELLED,,,,WebSocket is not connected
+503,2026-04-03T03:48:58.045345,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.21,,,CANCELLED,,,,WebSocket is not connected
+502,2026-04-03T03:48:58.025741,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.21,,,CANCELLED,,,,WebSocket is not connected
+501,2026-04-03T03:48:58.006122,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.42,,,CANCELLED,,,,WebSocket is not connected
+500,2026-04-03T03:48:57.980149,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9786.08,,,CANCELLED,,,,WebSocket is not connected
+499,2026-04-03T03:48:57.952490,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.65,,,CANCELLED,,,,WebSocket is not connected
+498,2026-04-03T03:48:57.935965,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.45,,,CANCELLED,,,,WebSocket is not connected
+497,2026-04-03T03:48:57.908633,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.34,,,CANCELLED,,,,WebSocket is not connected
+496,2026-04-03T03:48:57.877965,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9787.59,,,CANCELLED,,,,WebSocket is not connected
+495,2026-04-03T03:48:57.844648,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 4.0% (expected 10%),9,1.0,9785.33,,,CANCELLED,,,,WebSocket is not connected
+494,2026-04-03T03:48:57.822433,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 4.0% (expected 10%),9,1.0,9784.97,,,CANCELLED,,,,WebSocket is not connected
+493,2026-04-03T03:48:57.799789,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.38,,,CANCELLED,,,,WebSocket is not connected
+492,2026-04-03T03:48:57.777382,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.28,,,CANCELLED,,,,WebSocket is not connected
+491,2026-04-03T03:48:57.755597,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.48,,,CANCELLED,,,,WebSocket is not connected
+490,2026-04-03T03:48:57.736743,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9786.08,,,CANCELLED,,,,WebSocket is not connected
+489,2026-04-03T03:48:57.707265,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.51,,,CANCELLED,,,,WebSocket is not connected
+488,2026-04-03T03:48:57.695986,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.16,,,CANCELLED,,,,WebSocket is not connected
+487,2026-04-03T03:48:57.654070,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.35,,,CANCELLED,,,,WebSocket is not connected
+486,2026-04-03T03:48:57.621223,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9787.45,,,CANCELLED,,,,WebSocket is not connected
+485,2026-04-03T03:48:57.577040,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.27,,,CANCELLED,,,,WebSocket is not connected
+484,2026-04-03T03:48:57.511599,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9785.38,,,CANCELLED,,,,WebSocket is not connected
+483,2026-04-03T03:48:57.460774,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9785.23,,,CANCELLED,,,,WebSocket is not connected
+482,2026-04-03T03:48:57.406511,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9785.11,,,CANCELLED,,,,WebSocket is not connected
+481,2026-04-03T03:48:40.330304,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9785.37,,,CANCELLED,,,,WebSocket is not connected
+480,2026-04-03T03:48:40.311093,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9785.83,,,CANCELLED,,,,WebSocket is not connected
+479,2026-04-03T03:48:40.270985,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9785.13,,,CANCELLED,,,,WebSocket is not connected
+478,2026-04-03T03:48:40.242758,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9785.25,,,CANCELLED,,,,WebSocket is not connected
+477,2026-04-03T03:48:40.220893,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9785.43,,,CANCELLED,,,,WebSocket is not connected
+476,2026-04-03T03:48:40.191686,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9785.53,,,CANCELLED,,,,WebSocket is not connected
+475,2026-04-03T03:48:40.158102,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9785.29,,,CANCELLED,,,,WebSocket is not connected
+474,2026-04-03T03:48:40.139801,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9784.82,,,CANCELLED,,,,WebSocket is not connected
+473,2026-04-03T03:48:40.126430,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9787.53,,,CANCELLED,,,,WebSocket is not connected
+472,2026-04-03T03:48:37.321118,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9785.16,,,CANCELLED,,,,Request 80 timed out
+471,2026-04-03T03:48:35.319042,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 4.0% (expected 10%),6,1.0,9785.37,,,CANCELLED,,,,WebSocket is not connected
+470,2026-04-03T03:48:35.292755,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 4.0% (expected 10%),6,1.0,9786.1,,,CANCELLED,,,,WebSocket is not connected
+469,2026-04-03T03:48:35.258577,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 4.0% (expected 10%),6,1.0,9785.03,,,CANCELLED,,,,WebSocket is not connected
+468,2026-04-03T03:48:35.228618,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 4.0% (expected 10%),6,1.0,9785.13,,,CANCELLED,,,,WebSocket is not connected
+467,2026-04-03T03:48:35.206974,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 4.0% (expected 10%),6,1.0,9785.69,,,CANCELLED,,,,WebSocket is not connected
+466,2026-04-03T03:48:35.177830,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 4.0% (expected 10%),6,1.0,9785.59,,,CANCELLED,,,,WebSocket is not connected
+465,2026-04-03T03:48:35.145813,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 4.0% (expected 10%),6,1.0,9785.23,,,CANCELLED,,,,WebSocket is not connected
+464,2026-04-03T03:48:35.128192,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 5.0% (expected 10%),6,1.0,9784.97,,,CANCELLED,,,,WebSocket is not connected
+463,2026-04-03T03:48:35.115933,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 5.0% (expected 10%),6,1.0,9787.43,,,CANCELLED,,,,WebSocket is not connected
+462,2026-04-03T03:48:35.086811,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 5.0% (expected 10%),6,1.0,9785.23,,,CANCELLED,,,,WebSocket is not connected
+461,2026-04-03T03:48:35.056299,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 5.0% (expected 10%),6,1.0,9785.84,,,CANCELLED,,,,WebSocket is not connected
+460,2026-04-03T03:48:35.026081,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 5.0% (expected 10%),6,1.0,9785.09,,,CANCELLED,,,,WebSocket is not connected
+459,2026-04-03T03:48:35.003723,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 5.0% (expected 10%),6,1.0,9785.24,,,CANCELLED,,,,WebSocket is not connected
+458,2026-04-03T03:48:34.980078,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9785.72,,,CANCELLED,,,,WebSocket is not connected
+457,2026-04-03T03:48:34.958545,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 6.0% (expected 10%),6,1.0,9785.84,,,CANCELLED,,,,WebSocket is not connected
+456,2026-04-03T03:48:34.934625,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 6.0% (expected 10%),6,1.0,9785.1,,,CANCELLED,,,,WebSocket is not connected
+455,2026-04-03T03:48:34.922905,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.07,,,CANCELLED,,,,WebSocket is not connected
+454,2026-04-03T03:48:34.899475,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9787.27,,,CANCELLED,,,,WebSocket is not connected
+453,2026-04-03T03:48:34.876826,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.35,,,CANCELLED,,,,WebSocket is not connected
+452,2026-04-03T03:48:34.847757,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.87,,,CANCELLED,,,,WebSocket is not connected
+451,2026-04-03T03:48:34.828350,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9784.97,,,CANCELLED,,,,WebSocket is not connected
+450,2026-04-03T03:48:34.808081,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.16,,,CANCELLED,,,,WebSocket is not connected
+449,2026-04-03T03:48:34.781026,1HZ10V,CALL,EMA9 crossed above EMA21 | RSI=38.2,UP,1.0,9785.82,,,CANCELLED,,,,WebSocket is not connected
+448,2026-04-03T03:48:34.752057,1HZ10V,TICKHIGH,Momentum streak +4 ticks | RSI=55.8,HIGH,1.0,9785.73,,,CANCELLED,,,,WebSocket is not connected
+447,2026-04-03T03:48:34.733651,1HZ10V,TICKHIGH,Momentum streak +3 ticks | RSI=43.8,HIGH,1.0,9785.24,,,CANCELLED,,,,WebSocket is not connected
+446,2026-04-03T03:48:34.709664,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 7.0% (expected 10%),0,1.0,9785.12,,,CANCELLED,,,,WebSocket is not connected
+445,2026-04-03T03:48:34.635184,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 7.0% (expected 10%),0,1.0,9785.08,,,CANCELLED,,,,WebSocket is not connected
+444,2026-04-03T03:48:34.577171,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 6.0% (expected 10%),8,1.0,9785.02,,,CANCELLED,,,,WebSocket is not connected
+443,2026-04-03T03:48:34.528652,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 6.0% (expected 10%),8,1.0,9785.02,,,CANCELLED,,,,WebSocket is not connected
+442,2026-04-03T03:48:34.476655,1HZ10V,DIGITODD,Even% = 38% — bet ODD,ODD,1.0,9785.28,,,CANCELLED,,,,WebSocket is not connected
+441,2026-04-03T03:48:17.475747,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 6.0% (expected 10%),8,1.0,9785.95,,,CANCELLED,,,,WebSocket is not connected
+440,2026-04-03T03:48:17.452715,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 6.0% (expected 10%),8,1.0,9785.28,,,CANCELLED,,,,WebSocket is not connected
+439,2026-04-03T03:48:17.439736,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9785.85,,,CANCELLED,,,,WebSocket is not connected
+438,2026-04-03T03:48:17.429108,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9785.34,,,CANCELLED,,,,WebSocket is not connected
+437,2026-04-03T03:48:17.411940,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 6.0% (expected 10%),8,1.0,9785.64,,,CANCELLED,,,,WebSocket is not connected
+436,2026-04-03T03:48:17.376786,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 6.0% (expected 10%),8,1.0,9785.19,,,CANCELLED,,,,WebSocket is not connected
+435,2026-04-03T03:48:17.350611,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 6.0% (expected 10%),8,1.0,9787.32,,,CANCELLED,,,,WebSocket is not connected
+434,2026-04-03T03:48:17.339888,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 6.0% (expected 10%),8,1.0,9785.27,,,CANCELLED,,,,WebSocket is not connected
+433,2026-04-03T03:48:14.401115,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 6.0% (expected 10%),8,1.0,9785.27,,,CANCELLED,,,,Request 68 timed out
+432,2026-04-03T03:48:12.464745,1HZ10V,CALL,EMA9 crossed above EMA21 | RSI=46.2,UP,1.0,9786.1,,,CANCELLED,,,,WebSocket is not connected
+431,2026-04-03T03:48:12.441861,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 5.0% (expected 10%),0,1.0,9785.45,,,CANCELLED,,,,WebSocket is not connected
+430,2026-04-03T03:48:12.429820,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 5.0% (expected 10%),0,1.0,9785.96,,,CANCELLED,,,,WebSocket is not connected
+429,2026-04-03T03:48:12.410460,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 5.0% (expected 10%),0,1.0,9785.21,,,CANCELLED,,,,WebSocket is not connected
+428,2026-04-03T03:48:12.377736,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 5.0% (expected 10%),0,1.0,9785.81,,,CANCELLED,,,,WebSocket is not connected
+427,2026-04-03T03:48:12.362862,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 5.0% (expected 10%),0,1.0,9785.39,,,CANCELLED,,,,WebSocket is not connected
+426,2026-04-03T03:48:12.339559,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 5.0% (expected 10%),0,1.0,9787.14,,,CANCELLED,,,,WebSocket is not connected
+425,2026-04-03T03:48:12.324665,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 5.0% (expected 10%),0,1.0,9785.42,,,CANCELLED,,,,WebSocket is not connected
+424,2026-04-03T03:48:12.300131,1HZ10V,CALL,EMA9 crossed above EMA21 | RSI=47.5,UP,1.0,9786.34,,,CANCELLED,,,,WebSocket is not connected
+423,2026-04-03T03:48:12.274137,1HZ10V,PUT,EMA9 crossed below EMA21 | RSI=50.2,DOWN,1.0,9785.29,,,CANCELLED,,,,WebSocket is not connected
+422,2026-04-03T03:48:12.252283,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9786.08,,,CANCELLED,,,,WebSocket is not connected
+421,2026-04-03T03:48:12.222705,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.62,,,CANCELLED,,,,WebSocket is not connected
+420,2026-04-03T03:48:12.204371,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.76,,,CANCELLED,,,,WebSocket is not connected
+419,2026-04-03T03:48:12.174158,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.15,,,CANCELLED,,,,WebSocket is not connected
+418,2026-04-03T03:48:12.147034,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9787.03,,,CANCELLED,,,,WebSocket is not connected
+417,2026-04-03T03:48:12.118187,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.51,,,CANCELLED,,,,WebSocket is not connected
+416,2026-04-03T03:48:12.092583,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9786.33,,,CANCELLED,,,,WebSocket is not connected
+415,2026-04-03T03:48:12.063832,1HZ10V,PUT,EMA9 crossed below EMA21 | RSI=50.7,DOWN,1.0,9785.25,,,CANCELLED,,,,WebSocket is not connected
+414,2026-04-03T03:48:12.032881,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.95,,,CANCELLED,,,,WebSocket is not connected
+413,2026-04-03T03:48:12.007851,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.51,,,CANCELLED,,,,WebSocket is not connected
+412,2026-04-03T03:48:11.981462,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.95,,,CANCELLED,,,,WebSocket is not connected
+411,2026-04-03T03:48:11.962445,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 7.0% (expected 10%),0,1.0,9785.1,,,CANCELLED,,,,WebSocket is not connected
+410,2026-04-03T03:48:11.951428,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9786.96,,,CANCELLED,,,,WebSocket is not connected
+409,2026-04-03T03:48:11.927701,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.24,,,CANCELLED,,,,WebSocket is not connected
+408,2026-04-03T03:48:11.901258,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9786.13,,,CANCELLED,,,,WebSocket is not connected
+407,2026-04-03T03:48:11.853526,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.42,,,CANCELLED,,,,WebSocket is not connected
+406,2026-04-03T03:48:11.812396,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.83,,,CANCELLED,,,,WebSocket is not connected
+405,2026-04-03T03:48:11.740299,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 6.0% (expected 10%),0,1.0,9785.89,,,CANCELLED,,,,WebSocket is not connected
+404,2026-04-03T03:48:11.697927,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 6.0% (expected 10%),6,1.0,9785.69,,,CANCELLED,,,,WebSocket is not connected
+403,2026-04-03T03:48:11.606806,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 6.0% (expected 10%),6,1.0,9785.75,,,CANCELLED,,,,WebSocket is not connected
+402,2026-04-03T03:47:54.410217,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 6.0% (expected 10%),6,1.0,9785.35,,,CANCELLED,,,,WebSocket is not connected
+401,2026-04-03T03:47:54.364678,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 6.0% (expected 10%),6,1.0,9785.13,,,CANCELLED,,,,WebSocket is not connected
+400,2026-04-03T03:47:54.332263,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 6.0% (expected 10%),6,1.0,9786.91,,,CANCELLED,,,,WebSocket is not connected
+399,2026-04-03T03:47:54.322884,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 6.0% (expected 10%),6,1.0,9785.91,,,CANCELLED,,,,WebSocket is not connected
+398,2026-04-03T03:47:54.315886,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 6.0% (expected 10%),6,1.0,9785.87,,,CANCELLED,,,,WebSocket is not connected
+397,2026-04-03T03:47:54.304652,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 6.0% (expected 10%),6,1.0,9786.31,,,CANCELLED,,,,WebSocket is not connected
+396,2026-04-03T03:47:54.246924,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 6.0% (expected 10%),6,1.0,9785.48,,,CANCELLED,,,,WebSocket is not connected
+395,2026-04-03T03:47:51.425357,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 6.0% (expected 10%),6,1.0,9785.71,,,CANCELLED,,,,Request 57 timed out
+394,2026-04-03T03:47:49.369206,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.52,,,CANCELLED,,,,WebSocket is not connected
+393,2026-04-03T03:47:49.337773,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.02,,,CANCELLED,,,,WebSocket is not connected
+392,2026-04-03T03:47:49.321473,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.9,,,CANCELLED,,,,WebSocket is not connected
+391,2026-04-03T03:47:49.307072,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.79,,,CANCELLED,,,,WebSocket is not connected
+390,2026-04-03T03:47:49.300737,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.79,,,CANCELLED,,,,WebSocket is not connected
+389,2026-04-03T03:47:49.266789,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.15,,,CANCELLED,,,,WebSocket is not connected
+388,2026-04-03T03:47:49.235759,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.53,,,CANCELLED,,,,WebSocket is not connected
+387,2026-04-03T03:47:49.223582,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.55,,,CANCELLED,,,,WebSocket is not connected
+386,2026-04-03T03:47:49.191128,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9784.96,,,CANCELLED,,,,WebSocket is not connected
+385,2026-04-03T03:47:49.164002,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9786.62,,,CANCELLED,,,,WebSocket is not connected
+384,2026-04-03T03:47:49.143917,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9785.87,,,CANCELLED,,,,WebSocket is not connected
+383,2026-04-03T03:47:49.142672,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.87,,,CANCELLED,,,,WebSocket is not connected
+382,2026-04-03T03:47:49.103141,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.21,,,CANCELLED,,,,WebSocket is not connected
+381,2026-04-03T03:47:49.031596,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.59,,,CANCELLED,,,,WebSocket is not connected
+380,2026-04-03T03:47:49.012439,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.51,,,CANCELLED,,,,WebSocket is not connected
+379,2026-04-03T03:47:48.998916,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.21,,,CANCELLED,,,,WebSocket is not connected
+378,2026-04-03T03:47:48.973748,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.93,,,CANCELLED,,,,WebSocket is not connected
+377,2026-04-03T03:47:48.941828,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.83,,,CANCELLED,,,,WebSocket is not connected
+376,2026-04-03T03:47:48.929363,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.06,,,CANCELLED,,,,WebSocket is not connected
+375,2026-04-03T03:47:48.912635,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.5,,,CANCELLED,,,,WebSocket is not connected
+374,2026-04-03T03:47:48.881916,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.84,,,CANCELLED,,,,WebSocket is not connected
+373,2026-04-03T03:47:48.857547,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.68,,,CANCELLED,,,,WebSocket is not connected
+372,2026-04-03T03:47:48.839166,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.38,,,CANCELLED,,,,WebSocket is not connected
+371,2026-04-03T03:47:48.819730,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9787.03,,,CANCELLED,,,,WebSocket is not connected
+370,2026-04-03T03:47:48.795393,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.83,,,CANCELLED,,,,WebSocket is not connected
+369,2026-04-03T03:47:48.766309,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.59,,,CANCELLED,,,,WebSocket is not connected
+368,2026-04-03T03:47:48.733881,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.54,,,CANCELLED,,,,WebSocket is not connected
+367,2026-04-03T03:47:48.677158,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.62,,,CANCELLED,,,,WebSocket is not connected
+366,2026-04-03T03:47:48.618333,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.08,,,CANCELLED,,,,WebSocket is not connected
+365,2026-04-03T03:47:48.573073,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.08,,,CANCELLED,,,,WebSocket is not connected
+364,2026-04-03T03:47:31.636448,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.29,,,CANCELLED,,,,WebSocket is not connected
+363,2026-04-03T03:47:31.604096,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.73,,,CANCELLED,,,,WebSocket is not connected
+362,2026-04-03T03:47:31.573220,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.8,,,CANCELLED,,,,WebSocket is not connected
+361,2026-04-03T03:47:31.552370,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9785.62,,,CANCELLED,,,,WebSocket is not connected
+360,2026-04-03T03:47:31.522759,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9787.39,,,CANCELLED,,,,WebSocket is not connected
+359,2026-04-03T03:47:31.509416,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9785.45,,,CANCELLED,,,,WebSocket is not connected
+358,2026-04-03T03:47:28.487381,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9785.83,,,CANCELLED,,,,Request 47 timed out
+357,2026-04-03T03:47:27.469913,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9785.23,,,CANCELLED,,,,WebSocket is not connected
+356,2026-04-03T03:47:27.453407,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9785.95,,,CANCELLED,,,,WebSocket is not connected
+355,2026-04-03T03:47:27.429395,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9786.71,,,CANCELLED,,,,WebSocket is not connected
+354,2026-04-03T03:47:27.421339,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9785.52,,,CANCELLED,,,,WebSocket is not connected
+353,2026-04-03T03:47:27.363211,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9787.4,,,CANCELLED,,,,WebSocket is not connected
+352,2026-04-03T03:47:27.330945,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9785.16,,,CANCELLED,,,,WebSocket is not connected
+351,2026-04-03T03:47:27.306880,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9785.1,,,CANCELLED,,,,WebSocket is not connected
+350,2026-04-03T03:47:27.276385,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9786.1,,,CANCELLED,,,,WebSocket is not connected
+349,2026-04-03T03:47:27.250545,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9786.72,,,CANCELLED,,,,WebSocket is not connected
+348,2026-04-03T03:47:27.212801,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.65,,,CANCELLED,,,,WebSocket is not connected
+347,2026-04-03T03:47:27.186596,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9787.38,,,CANCELLED,,,,WebSocket is not connected
+346,2026-04-03T03:47:27.162970,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.25,,,CANCELLED,,,,WebSocket is not connected
+345,2026-04-03T03:47:27.144589,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.24,,,CANCELLED,,,,WebSocket is not connected
+344,2026-04-03T03:47:27.112535,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.34,,,CANCELLED,,,,WebSocket is not connected
+343,2026-04-03T03:47:27.091353,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.8,,,CANCELLED,,,,WebSocket is not connected
+342,2026-04-03T03:47:27.051600,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.51,,,CANCELLED,,,,WebSocket is not connected
+341,2026-04-03T03:47:27.023484,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9787.49,,,CANCELLED,,,,WebSocket is not connected
+340,2026-04-03T03:47:27.000145,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.13,,,CANCELLED,,,,WebSocket is not connected
+339,2026-04-03T03:47:26.969914,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.28,,,CANCELLED,,,,WebSocket is not connected
+338,2026-04-03T03:47:26.941298,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.33,,,CANCELLED,,,,WebSocket is not connected
+337,2026-04-03T03:47:26.911143,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.77,,,CANCELLED,,,,WebSocket is not connected
+336,2026-04-03T03:47:26.890799,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9785.43,,,CANCELLED,,,,WebSocket is not connected
+335,2026-04-03T03:47:26.857314,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9787.52,,,CANCELLED,,,,WebSocket is not connected
+334,2026-04-03T03:47:26.834000,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9785.24,,,CANCELLED,,,,WebSocket is not connected
+333,2026-04-03T03:47:26.809007,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9785.45,,,CANCELLED,,,,WebSocket is not connected
+332,2026-04-03T03:47:26.785087,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9786.13,,,CANCELLED,,,,WebSocket is not connected
+331,2026-04-03T03:47:26.705827,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9785.69,,,CANCELLED,,,,WebSocket is not connected
+330,2026-04-03T03:47:26.622256,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9785.72,,,CANCELLED,,,,WebSocket is not connected
+329,2026-04-03T03:47:26.562003,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.82,,,CANCELLED,,,,WebSocket is not connected
+328,2026-04-03T03:47:26.494537,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.85,,,CANCELLED,,,,WebSocket is not connected
+327,2026-04-03T03:47:09.281772,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.29,,,CANCELLED,,,,WebSocket is not connected
+326,2026-04-03T03:47:09.251128,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.69,,,CANCELLED,,,,WebSocket is not connected
+325,2026-04-03T03:47:09.221930,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9787.91,,,CANCELLED,,,,WebSocket is not connected
+324,2026-04-03T03:47:09.192916,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9785.16,,,CANCELLED,,,,WebSocket is not connected
+323,2026-04-03T03:47:09.165367,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9786.31,,,CANCELLED,,,,WebSocket is not connected
+322,2026-04-03T03:47:06.409654,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9785.96,,,CANCELLED,,,,Request 38 timed out
+321,2026-04-03T03:47:04.260709,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9785.25,,,CANCELLED,,,,WebSocket is not connected
+320,2026-04-03T03:47:04.239502,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9786.88,,,CANCELLED,,,,WebSocket is not connected
+319,2026-04-03T03:47:04.212843,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9787.96,,,CANCELLED,,,,WebSocket is not connected
+318,2026-04-03T03:47:04.178690,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9785.19,,,CANCELLED,,,,WebSocket is not connected
+317,2026-04-03T03:47:04.151223,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9786.15,,,CANCELLED,,,,WebSocket is not connected
+316,2026-04-03T03:47:04.118457,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9785.42,,,CANCELLED,,,,WebSocket is not connected
+315,2026-04-03T03:47:04.092061,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9786.9,,,CANCELLED,,,,WebSocket is not connected
+314,2026-04-03T03:47:04.065454,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9787.7,,,CANCELLED,,,,WebSocket is not connected
+313,2026-04-03T03:47:04.064240,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9787.7,,,CANCELLED,,,,WebSocket is not connected
+312,2026-04-03T03:47:04.005656,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9786.21,,,CANCELLED,,,,WebSocket is not connected
+311,2026-04-03T03:47:03.973232,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9785.48,,,CANCELLED,,,,WebSocket is not connected
+310,2026-04-03T03:47:03.945787,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9786.73,,,CANCELLED,,,,WebSocket is not connected
+309,2026-04-03T03:47:03.916808,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9787.32,,,CANCELLED,,,,WebSocket is not connected
+308,2026-04-03T03:47:03.893697,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9785.15,,,CANCELLED,,,,WebSocket is not connected
+307,2026-04-03T03:47:03.876261,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9786.5,,,CANCELLED,,,,WebSocket is not connected
+306,2026-04-03T03:47:03.845131,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 6.0% (expected 10%),4,1.0,9785.53,,,CANCELLED,,,,WebSocket is not connected
+305,2026-04-03T03:47:03.820207,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 6.0% (expected 10%),4,1.0,9786.49,,,CANCELLED,,,,WebSocket is not connected
+304,2026-04-03T03:47:03.809131,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 6.0% (expected 10%),4,1.0,9787.37,,,CANCELLED,,,,WebSocket is not connected
+303,2026-04-03T03:47:03.787101,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9785.1,,,CANCELLED,,,,WebSocket is not connected
+302,2026-04-03T03:47:03.761644,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9786.8,,,CANCELLED,,,,WebSocket is not connected
+301,2026-04-03T03:47:03.728595,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9785.59,,,CANCELLED,,,,WebSocket is not connected
+300,2026-04-03T03:47:03.711041,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9786.59,,,CANCELLED,,,,WebSocket is not connected
+299,2026-04-03T03:47:03.690577,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9787.69,,,CANCELLED,,,,WebSocket is not connected
+298,2026-04-03T03:47:03.668370,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 6.0% (expected 10%),7,1.0,9785.13,,,CANCELLED,,,,WebSocket is not connected
+297,2026-04-03T03:47:03.654627,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 6.0% (expected 10%),7,1.0,9786.71,,,CANCELLED,,,,WebSocket is not connected
+296,2026-04-03T03:47:03.615695,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 6.0% (expected 10%),7,1.0,9785.84,,,CANCELLED,,,,WebSocket is not connected
+295,2026-04-03T03:47:03.574791,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 6.0% (expected 10%),4,1.0,9785.02,,,CANCELLED,,,,WebSocket is not connected
+294,2026-04-03T03:47:03.520637,1HZ10V,TICKLOW,Momentum streak -4 ticks | RSI=47.6,LOW,1.0,9784.96,,,CANCELLED,,,,WebSocket is not connected
+293,2026-04-03T03:47:03.474733,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 6.0% (expected 10%),4,1.0,9785.21,,,CANCELLED,,,,WebSocket is not connected
+292,2026-04-03T03:47:03.420942,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 6.0% (expected 10%),4,1.0,9785.38,,,CANCELLED,,,,WebSocket is not connected
+291,2026-04-03T03:46:46.366833,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 7.0% (expected 10%),4,1.0,9786.72,,,CANCELLED,,,,WebSocket is not connected
+290,2026-04-03T03:46:46.342779,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 7.0% (expected 10%),4,1.0,9787.82,,,CANCELLED,,,,WebSocket is not connected
+289,2026-04-03T03:46:46.315764,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 7.0% (expected 10%),4,1.0,9786.96,,,CANCELLED,,,,WebSocket is not connected
+288,2026-04-03T03:46:46.299006,1HZ10V,TICKHIGH,Momentum streak +3 ticks | RSI=58.9,HIGH,1.0,9785.73,,,CANCELLED,,,,WebSocket is not connected
+287,2026-04-03T03:46:43.347811,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 7.0% (expected 10%),4,1.0,9785.29,,,CANCELLED,,,,Request 30 timed out
+286,2026-04-03T03:46:41.356599,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9786.8,,,CANCELLED,,,,WebSocket is not connected
+285,2026-04-03T03:46:41.332899,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9788.16,,,CANCELLED,,,,WebSocket is not connected
+284,2026-04-03T03:46:41.305603,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9787.08,,,CANCELLED,,,,WebSocket is not connected
+283,2026-04-03T03:46:41.286984,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9785.95,,,CANCELLED,,,,WebSocket is not connected
+282,2026-04-03T03:46:41.265963,1HZ10V,DIGITMATCH,Digit 5 underrepresented at 4.0% (expected 10%),5,1.0,9786.77,,,CANCELLED,,,,WebSocket is not connected
+281,2026-04-03T03:46:41.247055,1HZ10V,DIGITMATCH,Digit 5 underrepresented at 4.0% (expected 10%),5,1.0,9788.07,,,CANCELLED,,,,WebSocket is not connected
+280,2026-04-03T03:46:41.220654,1HZ10V,DIGITMATCH,Digit 5 underrepresented at 4.0% (expected 10%),5,1.0,9787.21,,,CANCELLED,,,,WebSocket is not connected
+279,2026-04-03T03:46:41.141823,1HZ10V,DIGITMATCH,Digit 5 underrepresented at 4.0% (expected 10%),5,1.0,9786.1,,,CANCELLED,,,,WebSocket is not connected
+278,2026-04-03T03:46:41.119992,1HZ10V,DIGITMATCH,Digit 5 underrepresented at 5.0% (expected 10%),5,1.0,9786.69,,,CANCELLED,,,,WebSocket is not connected
+277,2026-04-03T03:46:41.098790,1HZ10V,DIGITMATCH,Digit 5 underrepresented at 5.0% (expected 10%),5,1.0,9787.94,,,CANCELLED,,,,WebSocket is not connected
+276,2026-04-03T03:46:41.084138,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9787.29,,,CANCELLED,,,,WebSocket is not connected
+275,2026-04-03T03:46:41.054839,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9786.34,,,CANCELLED,,,,WebSocket is not connected
+274,2026-04-03T03:46:41.030547,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 4.0% (expected 10%),4,1.0,9786.88,,,CANCELLED,,,,WebSocket is not connected
+273,2026-04-03T03:46:41.005597,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 4.0% (expected 10%),4,1.0,9787.96,,,CANCELLED,,,,WebSocket is not connected
+272,2026-04-03T03:46:40.986663,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 4.0% (expected 10%),4,1.0,9787.13,,,CANCELLED,,,,WebSocket is not connected
+271,2026-04-03T03:46:40.962762,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9786.33,,,CANCELLED,,,,WebSocket is not connected
+270,2026-04-03T03:46:40.941630,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9786.9,,,CANCELLED,,,,WebSocket is not connected
+269,2026-04-03T03:46:40.922534,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9788.02,,,CANCELLED,,,,WebSocket is not connected
+268,2026-04-03T03:46:40.901183,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9787.3,,,CANCELLED,,,,WebSocket is not connected
+267,2026-04-03T03:46:40.886934,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9786.13,,,CANCELLED,,,,WebSocket is not connected
+266,2026-04-03T03:46:40.863373,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9786.73,,,CANCELLED,,,,WebSocket is not connected
+265,2026-04-03T03:46:40.842050,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9787.7,,,CANCELLED,,,,WebSocket is not connected
+264,2026-04-03T03:46:40.819749,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9787.31,,,CANCELLED,,,,WebSocket is not connected
+263,2026-04-03T03:46:40.802462,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 5.0% (expected 10%),4,1.0,9786.31,,,CANCELLED,,,,WebSocket is not connected
+262,2026-04-03T03:46:40.779812,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 6.0% (expected 10%),4,1.0,9786.49,,,CANCELLED,,,,WebSocket is not connected
+261,2026-04-03T03:46:40.764976,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 6.0% (expected 10%),4,1.0,9787.5,,,CANCELLED,,,,WebSocket is not connected
+260,2026-04-03T03:46:40.748517,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 6.0% (expected 10%),4,1.0,9787.5,,,CANCELLED,,,,WebSocket is not connected
+259,2026-04-03T03:46:40.678892,1HZ10V,TICKLOW,Momentum streak -3 ticks | RSI=42.2,LOW,1.0,9786.15,,,CANCELLED,,,,WebSocket is not connected
+258,2026-04-03T03:46:40.625570,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 7.0% (expected 10%),4,1.0,9786.21,,,CANCELLED,,,,WebSocket is not connected
+257,2026-04-03T03:46:40.579718,1HZ10V,PUT,EMA9 crossed below EMA21 | RSI=49.0,DOWN,1.0,9786.5,,,CANCELLED,,,,WebSocket is not connected
+256,2026-04-03T03:46:22.514568,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 7.0% (expected 10%),4,1.0,9787.67,,,CANCELLED,,,,WebSocket is not connected
+255,2026-04-03T03:46:22.496761,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 7.0% (expected 10%),4,1.0,9786.59,,,CANCELLED,,,,WebSocket is not connected
+254,2026-04-03T03:46:22.469212,1HZ10V,DIGITMATCH,Digit 4 underrepresented at 7.0% (expected 10%),4,1.0,9787.28,,,CANCELLED,,,,WebSocket is not connected
+253,2026-04-03T03:46:20.470355,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 6.0% (expected 10%),8,1.0,9786.8,,,CANCELLED,,,,Request 23 timed out
+252,2026-04-03T03:46:18.423051,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 6.0% (expected 10%),8,1.0,9787.72,,,CANCELLED,,,,WebSocket is not connected
+251,2026-04-03T03:46:18.399161,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 6.0% (expected 10%),8,1.0,9786.96,,,CANCELLED,,,,WebSocket is not connected
+250,2026-04-03T03:46:18.376106,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 6.0% (expected 10%),8,1.0,9787.18,,,CANCELLED,,,,WebSocket is not connected
+249,2026-04-03T03:46:18.353060,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9787.85,,,CANCELLED,,,,WebSocket is not connected
+248,2026-04-03T03:46:18.309725,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9787.08,,,CANCELLED,,,,WebSocket is not connected
+247,2026-04-03T03:46:18.286800,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.23,,,CANCELLED,,,,WebSocket is not connected
+246,2026-04-03T03:46:18.259182,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.99,,,CANCELLED,,,,WebSocket is not connected
+245,2026-04-03T03:46:18.213723,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.21,,,CANCELLED,,,,WebSocket is not connected
+244,2026-04-03T03:46:18.190930,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.45,,,CANCELLED,,,,WebSocket is not connected
+243,2026-04-03T03:46:18.160785,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.92,,,CANCELLED,,,,WebSocket is not connected
+242,2026-04-03T03:46:18.120013,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.29,,,CANCELLED,,,,WebSocket is not connected
+241,2026-04-03T03:46:18.052641,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.46,,,CANCELLED,,,,WebSocket is not connected
+240,2026-04-03T03:46:18.039226,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9788.04,,,CANCELLED,,,,WebSocket is not connected
+239,2026-04-03T03:46:17.999015,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.13,,,CANCELLED,,,,WebSocket is not connected
+238,2026-04-03T03:46:17.975324,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.59,,,CANCELLED,,,,WebSocket is not connected
+237,2026-04-03T03:46:17.954818,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.89,,,CANCELLED,,,,WebSocket is not connected
+236,2026-04-03T03:46:17.902627,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.3,,,CANCELLED,,,,WebSocket is not connected
+235,2026-04-03T03:46:17.878484,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9787.45,,,CANCELLED,,,,WebSocket is not connected
+234,2026-04-03T03:46:17.859114,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9787.89,,,CANCELLED,,,,WebSocket is not connected
+233,2026-04-03T03:46:17.829775,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9787.31,,,CANCELLED,,,,WebSocket is not connected
+232,2026-04-03T03:46:17.811546,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9787.53,,,CANCELLED,,,,WebSocket is not connected
+231,2026-04-03T03:46:17.787624,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9788.07,,,CANCELLED,,,,WebSocket is not connected
+230,2026-04-03T03:46:17.744933,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9787.5,,,CANCELLED,,,,WebSocket is not connected
+229,2026-04-03T03:46:17.728367,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9787.43,,,CANCELLED,,,,WebSocket is not connected
+228,2026-04-03T03:46:17.709283,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9788.0,,,CANCELLED,,,,WebSocket is not connected
+227,2026-04-03T03:46:17.682628,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9787.28,,,CANCELLED,,,,WebSocket is not connected
+226,2026-04-03T03:46:17.653690,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.27,,,CANCELLED,,,,WebSocket is not connected
+225,2026-04-03T03:46:17.608631,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.18,,,CANCELLED,,,,WebSocket is not connected
+224,2026-04-03T03:46:17.533939,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9787.23,,,CANCELLED,,,,WebSocket is not connected
+223,2026-04-03T03:46:17.432392,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9787.45,,,CANCELLED,,,,WebSocket is not connected
+222,2026-04-03T03:45:59.515001,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9787.81,,,CANCELLED,,,,WebSocket is not connected
+221,2026-04-03T03:45:59.494239,1HZ10V,PUT,EMA9 crossed below EMA21 | RSI=60.8,DOWN,1.0,9787.32,,,CANCELLED,,,,WebSocket is not connected
+220,2026-04-03T03:45:57.351305,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9787.46,,,CANCELLED,,,,Request 17 timed out
+219,2026-04-03T03:45:55.460127,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9787.87,,,CANCELLED,,,,WebSocket is not connected
+218,2026-04-03T03:45:55.413886,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9787.14,,,CANCELLED,,,,WebSocket is not connected
+217,2026-04-03T03:45:55.386909,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9788.06,,,CANCELLED,,,,WebSocket is not connected
+216,2026-04-03T03:45:55.358846,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9787.03,,,CANCELLED,,,,WebSocket is not connected
+215,2026-04-03T03:45:55.337780,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9788.21,,,CANCELLED,,,,WebSocket is not connected
+214,2026-04-03T03:45:55.310968,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9786.96,,,CANCELLED,,,,WebSocket is not connected
+213,2026-04-03T03:45:55.292079,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9788.51,,,CANCELLED,,,,WebSocket is not connected
+212,2026-04-03T03:45:55.259917,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9786.91,,,CANCELLED,,,,WebSocket is not connected
+211,2026-04-03T03:45:55.227768,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9788.74,,,CANCELLED,,,,WebSocket is not connected
+210,2026-04-03T03:45:55.198057,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9786.9,,,CANCELLED,,,,WebSocket is not connected
+209,2026-04-03T03:45:55.171671,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9788.57,,,CANCELLED,,,,WebSocket is not connected
+208,2026-04-03T03:45:55.136164,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9786.62,,,CANCELLED,,,,WebSocket is not connected
+207,2026-04-03T03:45:55.110542,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9788.65,,,CANCELLED,,,,WebSocket is not connected
+206,2026-04-03T03:45:55.060126,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9786.93,,,CANCELLED,,,,WebSocket is not connected
+205,2026-04-03T03:45:55.044560,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9788.6,,,CANCELLED,,,,WebSocket is not connected
+204,2026-04-03T03:45:54.999157,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.03,,,CANCELLED,,,,WebSocket is not connected
+203,2026-04-03T03:45:54.980784,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9788.89,,,CANCELLED,,,,WebSocket is not connected
+202,2026-04-03T03:45:54.937939,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.39,,,CANCELLED,,,,WebSocket is not connected
+201,2026-04-03T03:45:54.916112,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9788.89,,,CANCELLED,,,,WebSocket is not connected
+200,2026-04-03T03:45:54.881255,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.4,,,CANCELLED,,,,WebSocket is not connected
+199,2026-04-03T03:45:54.841848,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9788.86,,,CANCELLED,,,,WebSocket is not connected
+198,2026-04-03T03:45:54.788977,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.38,,,CANCELLED,,,,WebSocket is not connected
+197,2026-04-03T03:45:54.760866,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9789.2,,,CANCELLED,,,,WebSocket is not connected
+196,2026-04-03T03:45:54.731974,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9787.49,,,CANCELLED,,,,WebSocket is not connected
+195,2026-04-03T03:45:54.704044,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9789.19,,,CANCELLED,,,,WebSocket is not connected
+194,2026-04-03T03:45:54.685746,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 3.0% (expected 10%),8,1.0,9787.52,,,CANCELLED,,,,WebSocket is not connected
+193,2026-04-03T03:45:54.644052,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9789.14,,,CANCELLED,,,,WebSocket is not connected
+192,2026-04-03T03:45:54.595113,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.91,,,CANCELLED,,,,WebSocket is not connected
+191,2026-04-03T03:45:54.533646,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.96,,,CANCELLED,,,,WebSocket is not connected
+190,2026-04-03T03:45:54.467289,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.7,,,CANCELLED,,,,WebSocket is not connected
+189,2026-04-03T03:45:36.740353,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9789.23,,,CANCELLED,,,,WebSocket is not connected
+188,2026-04-03T03:45:34.393185,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9787.32,,,CANCELLED,,,,Request 12 timed out
+187,2026-04-03T03:45:16.640088,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 6.0% (expected 10%),1,1.0,9788.99,,,CANCELLED,,,,Request 8 timed out
+186,2026-04-03T03:44:56.456439,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 6.0% (expected 10%),1,1.0,9788.72,,,CANCELLED,,,,Request 6 timed out
+185,2026-04-03T03:44:55.743139,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 6.0% (expected 10%),1,1.0,9788.61,,,CANCELLED,,,,WebSocket is not connected
+184,2026-04-03T03:44:55.699474,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 5.0% (expected 10%),1,1.0,9788.75,,,CANCELLED,,,,WebSocket is not connected
+183,2026-04-03T03:44:55.649444,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 5.0% (expected 10%),1,1.0,9788.75,,,CANCELLED,,,,WebSocket is not connected
+182,2026-04-03T03:44:55.596192,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 5.0% (expected 10%),1,1.0,9788.88,,,CANCELLED,,,,WebSocket is not connected
+181,2026-04-03T03:44:55.532647,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 5.0% (expected 10%),1,1.0,9788.86,,,CANCELLED,,,,WebSocket is not connected
+180,2026-04-03T03:44:55.479491,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 6.0% (expected 10%),1,1.0,9789.04,,,CANCELLED,,,,WebSocket is not connected
+179,2026-04-03T03:44:55.415697,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 6.0% (expected 10%),1,1.0,9789.03,,,CANCELLED,,,,WebSocket is not connected
+178,2026-04-03T03:44:55.359087,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 6.0% (expected 10%),1,1.0,9789.05,,,CANCELLED,,,,WebSocket is not connected
+177,2026-04-03T03:44:55.307216,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9789.04,,,CANCELLED,,,,WebSocket is not connected
+176,2026-04-03T03:44:55.243046,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9789.02,,,CANCELLED,,,,WebSocket is not connected
+175,2026-04-03T03:44:55.187119,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9788.85,,,CANCELLED,,,,WebSocket is not connected
+174,2026-04-03T03:44:55.141632,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9789.19,,,CANCELLED,,,,WebSocket is not connected
+173,2026-04-03T03:44:55.087074,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9789.1,,,CANCELLED,,,,WebSocket is not connected
+172,2026-04-03T03:44:55.018667,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9789.05,,,CANCELLED,,,,WebSocket is not connected
+171,2026-04-03T03:44:54.965128,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9788.99,,,CANCELLED,,,,WebSocket is not connected
+170,2026-04-03T03:44:54.910166,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 5.0% (expected 10%),9,1.0,9789.16,,,CANCELLED,,,,WebSocket is not connected
+169,2026-04-03T03:44:54.860551,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9789.26,,,CANCELLED,,,,WebSocket is not connected
+168,2026-04-03T03:44:54.793863,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9789.24,,,CANCELLED,,,,WebSocket is not connected
+167,2026-04-03T03:44:54.710619,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9789.46,,,CANCELLED,,,,WebSocket is not connected
+166,2026-04-03T03:44:54.663800,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9789.66,,,CANCELLED,,,,WebSocket is not connected
+165,2026-04-03T03:44:54.611357,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9789.26,,,CANCELLED,,,,WebSocket is not connected
+164,2026-04-03T03:44:34.538378,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9789.5,,,CANCELLED,,,,Request 4 timed out
+163,2026-04-03T03:37:53.279095,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9791.05,,,,,,,
+162,2026-04-03T03:37:53.248073,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9791.03,,,,,,,
+161,2026-04-03T03:37:53.229859,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9790.91,,,,,,,
+160,2026-04-03T03:37:53.197373,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9791.03,,,,,,,
+159,2026-04-03T03:37:50.459362,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9791.04,,,,,,,
+158,2026-04-03T03:37:48.258452,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.91,,,CANCELLED,,,,WebSocket is not connected
+157,2026-04-03T03:37:48.237873,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9791.03,,,CANCELLED,,,,WebSocket is not connected
+156,2026-04-03T03:37:48.218873,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.74,,,CANCELLED,,,,WebSocket is not connected
+155,2026-04-03T03:37:48.185851,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.86,,,CANCELLED,,,,WebSocket is not connected
+154,2026-04-03T03:37:48.167775,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.8,,,CANCELLED,,,,WebSocket is not connected
+153,2026-04-03T03:37:48.141739,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.86,,,CANCELLED,,,,WebSocket is not connected
+152,2026-04-03T03:37:48.118708,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.59,,,CANCELLED,,,,WebSocket is not connected
+151,2026-04-03T03:37:48.090772,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9790.83,,,CANCELLED,,,,WebSocket is not connected
+150,2026-04-03T03:37:48.050508,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9790.75,,,CANCELLED,,,,WebSocket is not connected
+149,2026-04-03T03:37:48.027490,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9790.83,,,CANCELLED,,,,WebSocket is not connected
+148,2026-04-03T03:37:48.002776,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9790.39,,,CANCELLED,,,,WebSocket is not connected
+147,2026-04-03T03:37:47.978784,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9790.64,,,CANCELLED,,,,WebSocket is not connected
+146,2026-04-03T03:37:47.957946,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9790.72,,,CANCELLED,,,,WebSocket is not connected
+145,2026-04-03T03:37:47.934194,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9790.64,,,CANCELLED,,,,WebSocket is not connected
+144,2026-04-03T03:37:47.909381,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9790.29,,,CANCELLED,,,,WebSocket is not connected
+143,2026-04-03T03:37:47.880168,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9790.54,,,CANCELLED,,,,WebSocket is not connected
+142,2026-04-03T03:37:47.853152,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9790.75,,,CANCELLED,,,,WebSocket is not connected
+141,2026-04-03T03:37:47.828563,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9790.54,,,CANCELLED,,,,WebSocket is not connected
+140,2026-04-03T03:37:47.805460,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9790.47,,,CANCELLED,,,,WebSocket is not connected
+139,2026-04-03T03:37:47.784429,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.68,,,CANCELLED,,,,WebSocket is not connected
+138,2026-04-03T03:37:47.755754,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.74,,,CANCELLED,,,,WebSocket is not connected
+137,2026-04-03T03:37:47.723968,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.68,,,CANCELLED,,,,WebSocket is not connected
+136,2026-04-03T03:37:47.703996,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.31,,,CANCELLED,,,,WebSocket is not connected
+135,2026-04-03T03:37:47.672461,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.56,,,CANCELLED,,,,WebSocket is not connected
+134,2026-04-03T03:37:47.647770,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.68,,,CANCELLED,,,,WebSocket is not connected
+133,2026-04-03T03:37:47.616443,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.56,,,CANCELLED,,,,WebSocket is not connected
+132,2026-04-03T03:37:47.593930,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.21,,,CANCELLED,,,,WebSocket is not connected
+131,2026-04-03T03:37:47.553839,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.86,,,CANCELLED,,,,WebSocket is not connected
+130,2026-04-03T03:37:47.485809,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.91,,,CANCELLED,,,,WebSocket is not connected
+129,2026-04-03T03:37:47.437684,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.74,,,CANCELLED,,,,WebSocket is not connected
+128,2026-04-03T03:37:29.536735,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.56,,,CANCELLED,,,,WebSocket is not connected
+127,2026-04-03T03:37:29.515981,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.39,,,CANCELLED,,,,WebSocket is not connected
+126,2026-04-03T03:37:29.497701,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.56,,,CANCELLED,,,,WebSocket is not connected
+125,2026-04-03T03:37:27.354860,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9790.59,,,CANCELLED,,,,Request 18 timed out
+124,2026-04-03T03:37:25.463456,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9790.7,,,CANCELLED,,,,WebSocket is not connected
+123,2026-04-03T03:37:25.441471,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9790.61,,,CANCELLED,,,,WebSocket is not connected
+122,2026-04-03T03:37:25.401018,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9790.7,,,CANCELLED,,,,WebSocket is not connected
+121,2026-04-03T03:37:25.383086,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9790.98,,,CANCELLED,,,,WebSocket is not connected
+120,2026-04-03T03:37:25.363708,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9790.52,,,CANCELLED,,,,WebSocket is not connected
+119,2026-04-03T03:37:25.335083,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9790.98,,,CANCELLED,,,,WebSocket is not connected
+118,2026-04-03T03:37:25.314339,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9790.68,,,CANCELLED,,,,WebSocket is not connected
+117,2026-04-03T03:37:25.294044,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9790.64,,,CANCELLED,,,,WebSocket is not connected
+116,2026-04-03T03:37:25.263065,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9790.68,,,CANCELLED,,,,WebSocket is not connected
+115,2026-04-03T03:37:25.240670,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9791.02,,,CANCELLED,,,,WebSocket is not connected
+114,2026-04-03T03:37:25.219026,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9790.88,,,CANCELLED,,,,WebSocket is not connected
+113,2026-04-03T03:37:25.172493,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9791.02,,,CANCELLED,,,,WebSocket is not connected
+112,2026-04-03T03:37:25.152517,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9791.05,,,CANCELLED,,,,WebSocket is not connected
+111,2026-04-03T03:37:25.121849,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9790.69,,,CANCELLED,,,,WebSocket is not connected
+110,2026-04-03T03:37:25.104100,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9791.05,,,CANCELLED,,,,WebSocket is not connected
+109,2026-04-03T03:37:25.078148,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9791.21,,,CANCELLED,,,,WebSocket is not connected
+108,2026-04-03T03:37:25.046301,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9791.1,,,CANCELLED,,,,WebSocket is not connected
+107,2026-04-03T03:37:25.021723,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9791.21,,,CANCELLED,,,,WebSocket is not connected
+106,2026-04-03T03:37:24.999873,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9791.21,,,CANCELLED,,,,WebSocket is not connected
+105,2026-04-03T03:37:24.970829,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9790.9,,,CANCELLED,,,,WebSocket is not connected
+104,2026-04-03T03:37:24.933017,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.17500,None,1.0,9791.21,,,CANCELLED,,,,WebSocket is not connected
+103,2026-04-03T03:37:24.899390,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.17850,None,1.0,9791.12,,,CANCELLED,,,,WebSocket is not connected
+102,2026-04-03T03:37:24.811880,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 2.0% (expected 10%),7,1.0,9791.02,,,CANCELLED,,,,WebSocket is not connected
+101,2026-04-03T03:37:24.765237,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9791.2,,,CANCELLED,,,,WebSocket is not connected
+100,2026-04-03T03:37:24.716222,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 3.0% (expected 10%),7,1.0,9791.09,,,CANCELLED,,,,WebSocket is not connected
+99,2026-04-03T03:37:24.669068,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 4.0% (expected 10%),7,1.0,9791.03,,,CANCELLED,,,,WebSocket is not connected
+98,2026-04-03T03:37:24.627710,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 5.0% (expected 10%),7,1.0,9791.03,,,CANCELLED,,,,WebSocket is not connected
+97,2026-04-03T03:37:24.580038,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 6.0% (expected 10%),7,1.0,9790.86,,,CANCELLED,,,,WebSocket is not connected
+96,2026-04-03T03:37:24.533788,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 6.0% (expected 10%),7,1.0,9790.83,,,CANCELLED,,,,WebSocket is not connected
+95,2026-04-03T03:37:24.481354,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 6.0% (expected 10%),7,1.0,9790.64,,,CANCELLED,,,,WebSocket is not connected
+94,2026-04-03T03:37:12.573583,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 6.0% (expected 10%),7,1.0,9791.2,,,CANCELLED,,,,WebSocket is not connected
+93,2026-04-03T03:37:12.546571,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 6.0% (expected 10%),7,1.0,9791.2,,,CANCELLED,,,,WebSocket is not connected
+92,2026-04-03T03:37:04.400314,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 6.0% (expected 10%),7,1.0,9790.54,,,CANCELLED,,,,Request 12 timed out
+91,2026-04-03T03:36:52.468923,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 6.0% (expected 10%),7,1.0,9791.36,,,CANCELLED,,,,Request 8 timed out
+90,2026-04-03T03:36:52.463890,1HZ10V,DIGITMATCH,Digit 7 underrepresented at 6.0% (expected 10%),7,1.0,9791.36,,,CANCELLED,,,,Request 7 timed out
+89,2026-04-03T03:34:26.751702,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.10650,None,1.0,9794.69,,,,,,,
+88,2026-04-03T03:34:26.728492,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.11350,None,1.0,9794.69,,,,,,,
+87,2026-04-03T03:34:26.703113,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.11550,None,1.0,9794.69,,,,,,,
+86,2026-04-03T03:34:26.669260,1HZ10V,DIGITDIFF,Digit 9 overrepresented at 15.0% — DIFFER,9,1.0,9794.69,,,,,,,
+85,2026-04-03T03:34:26.635754,1HZ10V,DIGITDIFF,Digit 9 overrepresented at 14.0% — DIFFER,9,1.0,9794.69,,,,,,,
+84,2026-04-03T03:34:26.615164,1HZ10V,DIGITDIFF,Digit 9 overrepresented at 13.0% — DIFFER,9,1.0,9794.69,,,,,,,
+83,2026-04-03T03:34:26.602440,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.15300,None,1.0,9794.69,,,,,,,
+82,2026-04-03T03:34:26.567503,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.16150,None,1.0,9794.69,,,,,,,
+81,2026-04-03T03:34:26.542365,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.16500,None,1.0,9794.69,,,,,,,
+80,2026-04-03T03:34:26.530097,1HZ10V,DIGITDIFF,Digit 0 overrepresented at 13.0% — DIFFER,0,1.0,9794.6,,,,,,,
+79,2026-04-03T03:34:26.521695,1HZ10V,CALL,EMA9 crossed above EMA21 | RSI=46.8,UP,1.0,9794.69,,,,,,,
+78,2026-04-03T03:34:26.489265,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 7.0% (expected 10%),9,1.0,9794.69,,,,,,,
+77,2026-04-03T03:34:26.486069,1HZ10V,DIGITEVEN,Even% = 62% — bet EVEN,EVEN,1.0,9794.69,,,,,,,
+76,2026-04-03T03:34:20.383889,1HZ10V,DIGITMATCH,Digit 9 underrepresented at 6.0% (expected 10%),9,1.0,9793.78,,,,,,,
+75,2026-04-03T03:34:06.469813,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.01200,None,1.0,9794.65,,,CANCELLED,,,,Request 57 timed out
+74,2026-04-03T03:34:06.465064,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.01200,None,1.0,9794.65,,,CANCELLED,,,,Request 56 timed out
+73,2026-04-03T03:34:06.450248,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.01200,None,1.0,9794.65,,,CANCELLED,,,,Request 55 timed out
+72,2026-04-03T03:34:06.435174,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.01200,None,1.0,9794.65,,,CANCELLED,,,,Request 54 timed out
+71,2026-04-03T03:34:06.421866,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.01200,None,1.0,9794.65,,,CANCELLED,,,,Request 53 timed out
+70,2026-04-03T03:34:06.418791,1HZ10V,DIGITMATCH,Digit 3 underrepresented at 0.0% (expected 10%),3,1.0,9794.65,,,CANCELLED,,,,Request 52 timed out
+69,2026-04-03T03:34:06.415012,1HZ10V,DIGITMATCH,Digit 3 underrepresented at 0.0% (expected 10%),3,1.0,9794.65,,,CANCELLED,,,,Request 51 timed out
+68,2026-04-03T03:34:06.406038,1HZ10V,DIGITMATCH,Digit 3 underrepresented at 0.0% (expected 10%),3,1.0,9794.65,,,CANCELLED,,,,Request 50 timed out
+67,2026-04-03T03:34:06.401537,1HZ10V,DIGITMATCH,Digit 3 underrepresented at 0.0% (expected 10%),3,1.0,9794.65,,,CANCELLED,,,,Request 49 timed out
+66,2026-04-03T03:34:06.394931,1HZ10V,DIGITMATCH,Digit 3 underrepresented at 0.0% (expected 10%),3,1.0,9794.65,,,CANCELLED,,,,Request 48 timed out
+65,2026-04-03T03:34:06.387033,1HZ10V,DIGITMATCH,Digit 3 underrepresented at 0.0% (expected 10%),3,1.0,9794.65,,,CANCELLED,,,,Request 47 timed out
+64,2026-04-03T03:34:06.382996,1HZ10V,DIGITMATCH,Digit 3 underrepresented at 0.0% (expected 10%),3,1.0,9794.65,,,CANCELLED,,,,Request 46 timed out
+63,2026-04-03T03:34:06.355249,1HZ10V,DIGITMATCH,Digit 3 underrepresented at 0.0% (expected 10%),3,1.0,9794.65,,,CANCELLED,,,,Request 45 timed out
+62,2026-04-03T03:34:05.424430,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.00450,None,1.0,9794.41,,,CANCELLED,,,,Input validation failed: Properties not allowed: underlying_symbol.
+61,2026-04-03T03:34:05.401179,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.00450,None,1.0,9794.41,,,CANCELLED,,,,Input validation failed: Properties not allowed: underlying_symbol.
+60,2026-04-03T03:34:05.388306,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.00450,None,1.0,9794.41,,,CANCELLED,,,,Input validation failed: Properties not allowed: underlying_symbol.
+59,2026-04-03T03:34:05.387560,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.00450,None,1.0,9794.41,,,CANCELLED,,,,Input validation failed: Properties not allowed: underlying_symbol.
+58,2026-04-03T03:34:05.382206,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.00450,None,1.0,9794.41,,,CANCELLED,,,,Input validation failed: Properties not allowed: underlying_symbol.
+57,2026-04-03T03:09:10.001076,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 7.0% (expected 10%),6,1.0,9790.3,,,CANCELLED,,,,Input validation failed: Properties not allowed: underlying_symbol.
+56,2026-04-03T03:09:09.969877,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 7.0% (expected 10%),6,1.0,9790.3,,,CANCELLED,,,,Input validation failed: Properties not allowed: underlying_symbol.
+55,2026-04-03T03:09:07.315865,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 7.0% (expected 10%),6,1.0,9789.72,,,CANCELLED,,,,Request 13 timed out
+54,2026-04-03T03:09:05.934894,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9790.52,,,CANCELLED,,,,WebSocket is not connected
+53,2026-04-03T03:09:05.889624,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9790.52,,,CANCELLED,,,,WebSocket is not connected
+52,2026-04-03T03:09:05.869808,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9790.51,,,CANCELLED,,,,WebSocket is not connected
+51,2026-04-03T03:09:05.797343,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 4.0% (expected 10%),8,1.0,9790.51,,,CANCELLED,,,,WebSocket is not connected
+50,2026-04-03T03:09:05.765936,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9790.39,,,CANCELLED,,,,WebSocket is not connected
+49,2026-04-03T03:09:05.708930,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9790.39,,,CANCELLED,,,,WebSocket is not connected
+48,2026-04-03T03:09:05.672655,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9790.5,,,CANCELLED,,,,WebSocket is not connected
+47,2026-04-03T03:09:05.617492,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9790.5,,,CANCELLED,,,,WebSocket is not connected
+46,2026-04-03T03:09:05.587648,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9790.33,,,CANCELLED,,,,WebSocket is not connected
+45,2026-04-03T03:09:05.537979,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9790.33,,,CANCELLED,,,,WebSocket is not connected
+44,2026-04-03T03:09:05.506973,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9790.36,,,CANCELLED,,,,WebSocket is not connected
+43,2026-04-03T03:09:05.441983,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9790.36,,,CANCELLED,,,,WebSocket is not connected
+42,2026-04-03T03:09:05.400786,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9790.47,,,CANCELLED,,,,WebSocket is not connected
+41,2026-04-03T03:09:05.358449,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9790.47,,,CANCELLED,,,,WebSocket is not connected
+40,2026-04-03T03:09:05.312756,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9790.43,,,CANCELLED,,,,WebSocket is not connected
+39,2026-04-03T03:09:05.240685,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 5.0% (expected 10%),8,1.0,9790.43,,,CANCELLED,,,,WebSocket is not connected
+38,2026-04-03T03:09:05.200007,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 6.0% (expected 10%),8,1.0,9790.4,,,CANCELLED,,,,WebSocket is not connected
+37,2026-04-03T03:09:05.121087,1HZ10V,DIGITMATCH,Digit 6 underrepresented at 7.0% (expected 10%),6,1.0,9790.4,,,CANCELLED,,,,WebSocket is not connected
+36,2026-04-03T03:09:05.087431,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 7.0% (expected 10%),8,1.0,9790.52,,,CANCELLED,,,,WebSocket is not connected
+35,2026-04-03T03:09:04.970729,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 7.0% (expected 10%),8,1.0,9790.52,,,CANCELLED,,,,WebSocket is not connected
+34,2026-04-03T03:09:04.949190,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 7.0% (expected 10%),8,1.0,9790.11,,,CANCELLED,,,,WebSocket is not connected
+33,2026-04-03T03:09:04.886752,1HZ10V,DIGITMATCH,Digit 8 underrepresented at 7.0% (expected 10%),8,1.0,9790.11,,,CANCELLED,,,,WebSocket is not connected
+32,2026-04-03T03:09:04.856597,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.08750,None,1.0,9789.92,,,CANCELLED,,,,WebSocket is not connected
+31,2026-04-03T03:09:04.809944,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.09300,None,1.0,9789.92,,,CANCELLED,,,,WebSocket is not connected
+30,2026-04-03T03:09:04.760737,1HZ10V,ACCU,Calm for 8+ ticks (post-spike) | ATR=0.09250,None,1.0,9789.87,,,CANCELLED,,,,WebSocket is not connected
+29,2026-04-03T03:09:04.716801,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 7.0% (expected 10%),1,1.0,9789.87,,,CANCELLED,,,,WebSocket is not connected
+28,2026-04-03T03:09:04.689605,1HZ10V,PUT,EMA9 crossed below EMA21 | RSI=49.3,DOWN,1.0,9789.9,,,CANCELLED,,,,WebSocket is not connected
+27,2026-04-03T03:09:04.610194,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 7.0% (expected 10%),1,1.0,9789.9,,,CANCELLED,,,,WebSocket is not connected
+26,2026-04-03T03:09:04.595713,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 7.0% (expected 10%),0,1.0,9789.93,,,CANCELLED,,,,WebSocket is not connected
+25,2026-04-03T03:09:04.490725,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 7.0% (expected 10%),0,1.0,9789.93,,,CANCELLED,,,,WebSocket is not connected
+24,2026-04-03T03:08:44.431357,1HZ10V,CALL,EMA9 crossed above EMA21 | RSI=49.1,UP,1.0,9789.99,,,CANCELLED,,,,Request 9 timed out
+23,2026-04-03T03:08:44.367138,1HZ10V,DIGITMATCH,Digit 0 underrepresented at 7.0% (expected 10%),0,1.0,9789.99,,,CANCELLED,,,,Request 8 timed out
+22,2026-04-03T03:08:43.571750,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 7.0% (expected 10%),1,1.0,9790.02,,,CANCELLED,,,,WebSocket is not connected
+21,2026-04-03T03:08:43.522409,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 7.0% (expected 10%),1,1.0,9789.59,,,CANCELLED,,,,WebSocket is not connected
+20,2026-04-03T03:08:43.473755,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 7.0% (expected 10%),1,1.0,9789.86,,,CANCELLED,,,,WebSocket is not connected
+19,2026-04-03T03:08:43.393859,1HZ10V,TICKLOW,Momentum streak -3 ticks | RSI=38.9,LOW,1.0,9789.81,,,CANCELLED,,,,WebSocket is not connected
+18,2026-04-03T03:08:43.346799,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 6.0% (expected 10%),1,1.0,9789.84,,,CANCELLED,,,,WebSocket is not connected
+17,2026-04-03T03:08:43.290369,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 6.0% (expected 10%),1,1.0,9790.07,,,CANCELLED,,,,WebSocket is not connected
+16,2026-04-03T03:08:43.234737,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 6.0% (expected 10%),1,1.0,9790.13,,,CANCELLED,,,,WebSocket is not connected
+15,2026-04-03T03:08:43.171053,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 6.0% (expected 10%),1,1.0,9790.11,,,CANCELLED,,,,WebSocket is not connected
+14,2026-04-03T03:08:43.120461,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 5.0% (expected 10%),1,1.0,9789.92,,,CANCELLED,,,,WebSocket is not connected
+13,2026-04-03T03:08:43.076160,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 5.0% (expected 10%),1,1.0,9789.8,,,CANCELLED,,,,WebSocket is not connected
+12,2026-04-03T03:08:43.019787,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 5.0% (expected 10%),1,1.0,9789.95,,,CANCELLED,,,,WebSocket is not connected
+11,2026-04-03T03:08:42.958190,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 5.0% (expected 10%),1,1.0,9790.06,,,CANCELLED,,,,WebSocket is not connected
+10,2026-04-03T03:08:42.900859,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 5.0% (expected 10%),1,1.0,9790.02,,,CANCELLED,,,,WebSocket is not connected
+9,2026-04-03T03:08:42.852252,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 5.0% (expected 10%),1,1.0,9790.02,,,CANCELLED,,,,WebSocket is not connected
+8,2026-04-03T03:08:42.801935,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 6.0% (expected 10%),1,1.0,9790.1,,,CANCELLED,,,,WebSocket is not connected
+7,2026-04-03T03:08:42.744607,1HZ10V,CALL,EMA9 crossed above EMA21 | RSI=47.0,UP,1.0,9790.14,,,CANCELLED,,,,WebSocket is not connected
+6,2026-04-03T03:08:42.684450,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 7.0% (expected 10%),1,1.0,9790.0,,,CANCELLED,,,,WebSocket is not connected
+5,2026-04-03T03:08:42.641897,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 7.0% (expected 10%),1,1.0,9790.06,,,CANCELLED,,,,WebSocket is not connected
+4,2026-04-03T03:08:42.597649,1HZ10V,ACCU,Calm for 8+ ticks | ATR=0.15050,None,1.0,9789.58,,,CANCELLED,,,,WebSocket is not connected
+3,2026-04-03T03:08:42.541220,1HZ10V,ACCU,Calm for 8+ ticks | ATR=0.14500,None,1.0,9789.72,,,CANCELLED,,,,WebSocket is not connected
+2,2026-04-03T03:08:42.483865,1HZ10V,ACCU,Calm for 8+ ticks | ATR=0.14200,None,1.0,9789.58,,,CANCELLED,,,,WebSocket is not connected
+1,2026-04-03T03:08:22.365977,1HZ10V,DIGITMATCH,Digit 1 underrepresented at 7.0% (expected 10%),1,1.0,9789.58,,,CANCELLED,,,,Request 4 timed out
