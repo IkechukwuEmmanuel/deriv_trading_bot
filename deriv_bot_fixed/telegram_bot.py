@@ -6,11 +6,12 @@ Architecture Upgrades:
   2. Anti-Spam Guard: Implemented _safe_edit to catch Telegram's "Message not modified" crashes.
   3. UI Polish: Status dashboard now explicitly tracks Accumulator-specific metrics.
   4. Global Error Boundary: Added a root-level error handler to prevent UI thread panics.
+  5. Defensive Rendering: Safe attribute getters prevent UI crashes on missing state variables.
 """
 
 import asyncio
 import logging
-from datetime import datetime
+from datetime import datetime, timezone
 
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
@@ -44,7 +45,7 @@ async def _safe_edit(query, text: str, reply_markup=None, parse_mode=ParseMode.H
 
 async def _build_status_text(s) -> str:
     db = s.db
-    bal = s.engine.balance if s.engine else 0.0
+    bal = s.engine.balance if getattr(s, 'engine', None) else 0.0
     pnl = await db.get_today_pnl()
     cnt = await db.get_trade_count_today()
     summary = await db.get_lifetime_summary()
@@ -52,31 +53,34 @@ async def _build_status_text(s) -> str:
     wins = summary.get("wins", 0)
     wr = f"{wins/total*100:.1f}%" if total else "—"
 
-    target_bar = _bar(max(pnl, 0), s.daily_target)
-    loss_bar = _bar(max(-pnl, 0), abs(s.daily_stoploss))
+    target_bar = _bar(max(pnl, 0), getattr(s, 'daily_target', 0))
+    loss_bar = _bar(max(-pnl, 0), abs(getattr(s, 'daily_stoploss', 0)))
     trade_status = (
         f"🔴 Open — ID {s.open_contract_id} | P&L {s.open_pnl:+.2f}"
-        if s.open_contract_id else "— No open trade"
+        if getattr(s, 'open_contract_id', None) else "— No open trade"
     )
     
-    mode = ("🟢 RUNNING" if s.trading and not s.paused
-            else ("⏸ PAUSED" if s.paused else "🔴 STOPPED"))
+    mode = ("🟢 RUNNING" if getattr(s, 'trading', False) and not getattr(s, 'paused', False)
+            else ("⏸ PAUSED" if getattr(s, 'paused', False) else "🔴 STOPPED"))
+
+    # Safe fallback for currency to prevent AttributeError crashes in the UI thread
+    currency_label = getattr(s, 'currency', 'USD') if getattr(s, 'engine', None) else ''
 
     return (
         f"<b>📊 Accumulator Variance Engine</b>  {mode}\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"<b>Balance</b>   ${bal:.2f} {s.currency if s.engine else ''}\n"
+        f"<b>Balance</b>   ${bal:.2f} {currency_label}\n"
         f"<b>Today P&L</b> {pnl:+.2f}\n"
-        f"<b>Target</b>    {target_bar} ${max(pnl,0):.2f} / ${s.daily_target:.2f}\n"
-        f"<b>Stop-loss</b> {loss_bar} ${max(-pnl,0):.2f} / ${abs(s.daily_stoploss):.2f}\n"
+        f"<b>Target</b>    {target_bar} ${max(pnl,0):.2f} / ${getattr(s, 'daily_target', 0):.2f}\n"
+        f"<b>Stop-loss</b> {loss_bar} ${max(-pnl,0):.2f} / ${abs(getattr(s, 'daily_stoploss', 0)):.2f}\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"<b>Market</b>    <code>{s.market}</code>\n"
+        f"<b>Market</b>    <code>{getattr(s, 'market', 'N/A')}</code>\n"
         f"<b>Strategy</b>  <code>Variance Arbitrage</code>\n"
-        f"<b>Stake</b>     ${s.stake:.2f}\n"
+        f"<b>Stake</b>     ${getattr(s, 'stake', 0):.2f}\n"
         f"<b>Today's Trades</b> {cnt} | Win Rate: {wr}\n"
         f"<b>Live Trade</b>     {trade_status}\n"
         f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        f"<i>{datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC</i>"
+        f"<i>{datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC</i>"
     )
 
 # ── Dynamic Keyboards ──────────────────────────────────────────────────────
@@ -97,10 +101,10 @@ def _main_keyboard() -> InlineKeyboardMarkup:
 def _settings_keyboard(s) -> InlineKeyboardMarkup:
     """The settings submenu (Stripped of obsolete contract toggles)."""
     return InlineKeyboardMarkup([
-        [InlineKeyboardButton(f"Market: {s.market}", callback_data="menu_market")],
-        [InlineKeyboardButton(f"Stake: ${s.stake:.2f}", callback_data="input_stake")],
-        [InlineKeyboardButton(f"Target: ${s.daily_target:.2f}", callback_data="input_target"),
-         InlineKeyboardButton(f"Stop: -${abs(s.daily_stoploss):.2f}", callback_data="input_stoploss")],
+        [InlineKeyboardButton(f"Market: {getattr(s, 'market', 'N/A')}", callback_data="menu_market")],
+        [InlineKeyboardButton(f"Stake: ${getattr(s, 'stake', 0):.2f}", callback_data="input_stake")],
+        [InlineKeyboardButton(f"Target: ${getattr(s, 'daily_target', 0):.2f}", callback_data="input_target"),
+         InlineKeyboardButton(f"Stop: -${abs(getattr(s, 'daily_stoploss', 0)):.2f}", callback_data="input_stoploss")],
         [InlineKeyboardButton("🔙 Back to Main", callback_data="menu_main")]
     ])
 
@@ -263,18 +267,18 @@ class TelegramController:
         reply = query.message.reply_text
 
         if action == "start":
-            if s.trading:
+            if getattr(s, 'trading', False):
                 await reply("⚡ Bot is already running.")
             else:
                 s.trading = True
                 s.paused = False
                 await s.db.set_setting("trading", True)
-                await _safe_edit(query, f"▶ <b>Bot Started</b>\nMarket: <code>{s.market}</code>\nStake: <code>${s.stake:.2f}</code>", reply_markup=_main_keyboard())
+                await _safe_edit(query, f"▶ <b>Bot Started</b>\nMarket: <code>{getattr(s, 'market', 'N/A')}</code>\nStake: <code>${getattr(s, 'stake', 0):.2f}</code>", reply_markup=_main_keyboard())
 
         elif action == "stop":
             s.trading = False
             await s.db.set_setting("trading", False)
-            note = "open trade will settle first" if s.open_contract_id else "no open trades"
+            note = "open trade will settle first" if getattr(s, 'open_contract_id', None) else "no open trades"
             await _safe_edit(query, f"⏹ <b>Bot Stopped</b> ({note})", reply_markup=_main_keyboard())
 
         elif action == "pause":
@@ -297,7 +301,7 @@ class TelegramController:
                 with open(path, "rb") as f:
                     await query.message.reply_document(
                         document=f,
-                        filename=f"deriv_trades_{datetime.utcnow().date()}.csv",
+                        filename=f"deriv_trades_{datetime.now(timezone.utc).date()}.csv",
                         caption="📊 Trade history"
                     )
 

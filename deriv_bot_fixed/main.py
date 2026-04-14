@@ -42,6 +42,7 @@ log = logging.getLogger("main")
 @dataclass
 class BotState:
     market: str = DEFAULT_MARKET
+    currency: str = "USD"  # Required for Telegram UI formatting
     contract_type: str = "ACCU"  # Exclusively set to ACCU
     stake: float = DEFAULT_STAKE
     daily_target: float = DAILY_TARGET
@@ -198,16 +199,17 @@ class TradeController:
                     current_spot = float(poc["current_spot"])
                     high_barrier = float(poc["high_barrier"])
                     low_barrier = float(poc["low_barrier"])
+                    tick_count = int(poc.get("tick_count", 0))
                 except (KeyError, TypeError):
                     pass  # Skip if payload doesn't have barriers yet
                 else:
                     ticks = s.engine.get_ticks(s.market)
                     should_evade = check_exit_condition(
-                        ticks, current_spot, high_barrier, low_barrier)
+                        ticks, current_spot, high_barrier, low_barrier, tick_count
+                    )
 
                     if should_evade:
-                        log.warning(
-                            f"DANGER DETECTED: Variance Arbitrage triggered emergency exit!")
+                        log.warning(f"DANGER DETECTED: Variance Arbitrage triggered emergency exit!")
                         await self.close_trade(reason="PROBABILITY_EVASION")
                         return
 
