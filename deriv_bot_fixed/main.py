@@ -187,10 +187,10 @@ class TradeController:
             s.open_pnl = pnl
 
             # 1. Standard Target Exit
-            if s.open_contract_type == "ACCU" and pnl >= ACCU_PROFIT_TARGET and s.open_contract_id:
-                log.info("Target +$%.2f reached — selling.", pnl)
-                await self.close_trade(reason="TARGET_MET")
-                return
+            #if s.open_contract_type == "ACCU" and pnl >= ACCU_PROFIT_TARGET and s.open_contract_id:
+                #log.info("Target +$%.2f reached — selling.", pnl)
+                #await self.close_trade(reason="TARGET_MET")
+                #return
 
             # 2. Probability Evasion Exit (Zero-Latency Barrier Check)
             if s.open_contract_type == "ACCU" and s.open_contract_id and not poc.get("is_sold"):
