@@ -1,12 +1,12 @@
 """
-main.py — Production Grade Orchestrator (Accumulator Strict Edition)
-────────────────────────────────────────────────────────────────────
+main.py — Production Grade Orchestrator (ATR Spike Detection Edition)
+─────────────────────────────────────────────────────────────────────
 Architecture Upgrades:
   1. App/Orchestrator Pattern: Separates lifecycle from business logic.
   2. TradeController: Encapsulates all trading rules and state.
-  3. Mutex Locking: asyncio.Lock prevents double-entry race conditions.
-  4. Live Barrier Evasion: Exit logic moved to on_trade_update to process live Z-scores.
-  5. Graceful Shutdown: Hooks into system signals to safely close DB/WS.
+  3. State-First Mutex Locking: Prevents network race conditions on exits.
+  4. Live ATR Spike Evasion: Unpacks strategy tuples and tracks tick duration.
+  5. Naked Execution: Profit ceilings removed; pure mathematical exits only.
 """
 
 import asyncio
@@ -18,8 +18,7 @@ from logging.handlers import RotatingFileHandler
 
 from config import (
     DEFAULT_MARKET, DEFAULT_CONTRACT, DEFAULT_STAKE,
-    DAILY_TARGET, DAILY_STOPLOSS, #ACCU_PROFIT_TARGET,
-    ACCU_GROWTH_RATE, DB_PATH
+    DAILY_TARGET, DAILY_STOPLOSS, ACCU_GROWTH_RATE, DB_PATH
 )
 from database import Database
 from deriv import DerivEngine
@@ -55,6 +54,7 @@ class BotState:
     open_pnl: float = 0.0
     open_entry_price: float = 0.0
     open_contract_type: str = ""
+    ticks_held: int = 0 # Tracks duration for strategy debounce/timeout
     engine: DerivEngine | None = None
     db: Database | None = None
     telegram: TelegramController | None = None
@@ -93,7 +93,7 @@ class TradeController:
         if s.open_contract_id or not s.trading or s.paused:
             return
 
-        # ── Signal Generation (Variance Arbitrage) ──
+        # ── Signal Generation (ATR Variance Arbitrage) ──
         signal = get_entry_signal(ticks, growth_rate=ACCU_GROWTH_RATE)
 
         if signal:
@@ -119,9 +119,7 @@ class TradeController:
         ct = signal.contract_type
         log.info("Opening trade: %s", signal)
 
-        # Build proposal kwargs exclusively for Accumulators
-        proposal_kwargs = {"growth_rate": signal.params.get(
-            "growth_rate", ACCU_GROWTH_RATE)}
+        proposal_kwargs = {"growth_rate": signal.params.get("growth_rate", ACCU_GROWTH_RATE)}
 
         # Register intent to DB
         ticks = s.engine.get_ticks(s.market)
@@ -136,6 +134,7 @@ class TradeController:
 
         s.open_trade_db_id = db_id
         s.open_contract_type = ct
+        s.ticks_held = 0 # Reset tick counter for the new trade
 
         # Execute API Call
         try:
@@ -156,6 +155,7 @@ class TradeController:
             s.open_trade_db_id = None
             s.open_contract_id = None
             s.open_contract_type = ""
+            s.ticks_held = 0
             if s.telegram:
                 await s.telegram.push(f"⚠️ Trade failed to open: {e}")
 
@@ -186,34 +186,38 @@ class TradeController:
 
             pnl = float(poc.get("profit", 0))
             s.open_pnl = pnl
+            
+            # Increment the internal tick tracker
+            s.ticks_held += 1
 
-            # 1. Standard Target Exit
-            #if s.open_contract_type == "ACCU" and pnl >= ACCU_PROFIT_TARGET and s.open_contract_id:
-                #log.info("Target +$%.2f reached — selling.", pnl)
-                #await self.close_trade(reason="TARGET_MET")
-                #return
-
-            # 2. Probability Evasion Exit (Zero-Latency Barrier Check)
+            # Probability Evasion Exit (ATR Spike Check)
             if s.open_contract_type == "ACCU" and s.open_contract_id and not poc.get("is_sold"):
                 try:
                     current_spot = float(poc["current_spot"])
                     high_barrier = float(poc["high_barrier"])
                     low_barrier = float(poc["low_barrier"])
-                    tick_count = int(poc.get("tick_count", 0))
+                    # Use Deriv's official tick count if available, otherwise fallback to our tracker
+                    tick_count = int(poc.get("tick_count", s.ticks_held))
                 except (KeyError, TypeError):
                     pass  # Skip if payload doesn't have barriers yet
                 else:
                     ticks = s.engine.get_ticks(s.market)
-                    should_evade = check_exit_condition(
-                        ticks, current_spot, high_barrier, low_barrier, tick_count
+                    
+                    # Unpack the tuple from the new strategies.py
+                    should_evade, reason = check_exit_condition(
+                        ticks=ticks, 
+                        ticks_since_open=tick_count,
+                        current_spot=current_spot, 
+                        high_barrier=high_barrier, 
+                        low_barrier=low_barrier
                     )
 
                     if should_evade:
-                        log.warning(f"DANGER DETECTED: Variance Arbitrage triggered emergency exit!")
-                        await self.close_trade(reason="PROBABILITY_EVASION")
+                        log.warning(f"DANGER DETECTED: {reason} — Firing emergency exit!")
+                        await self.close_trade(reason=f"EVASION: {reason}")
                         return
 
-            # 3. Contract Resolution
+            # Contract Resolution
             if poc.get("is_sold") or poc.get("status") == "sold":
                 result = "WIN" if pnl > 0 else "LOSS"
                 bal = float(poc.get("balance_after", s.engine.balance))
@@ -231,6 +235,8 @@ class TradeController:
             await s.db.update_trade(s.open_trade_db_id, pnl=pnl, result=result, exit_price=exit_price, balance_after=bal)
             await s.db.update_algo_stats(s.open_contract_type, won=(result == "WIN"), pnl=pnl)
 
+        log.info("Trade finalized: %s | PnL: %+.2f | New Balance: %.2f", result, pnl, bal)
+
         icon = "✅" if result == "WIN" else "❌"
         if s.telegram:
             await s.telegram.push(f"{icon} <b>Trade closed: {result}</b>\n"
@@ -241,6 +247,7 @@ class TradeController:
         s.open_trade_db_id = None
         s.open_pnl = 0.0
         s.open_contract_type = ""
+        s.ticks_held = 0
 
 
 # ── 3. Main Application Orchestrator ──────────────────────────────────────
@@ -287,7 +294,7 @@ class DerivBotApp:
         connected = await self.engine.wait_connected(timeout=30)
         if self.tg and connected:
             await self.tg.push(
-                "🤖 <b>Deriv Bot Online (Accumulator Strict)</b>\n"
+                "🤖 <b>Deriv Bot Online (ATR Spike Edition)</b>\n"
                 f"Market: <code>{self.state.market}</code>\n"
                 f"Trading: {'ON ✅' if self.state.trading else 'OFF'}"
             )
